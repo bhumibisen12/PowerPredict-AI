@@ -1,0 +1,110 @@
+[
+  {
+    "id": "KB-CEA-LAND-01",
+    "title": "CEA Best Practices: Land Acquisition & Fast-Track District Revenue Coordination",
+    "source": "Central Electricity Authority (CEA) Report on Renewable Energy Park Execution",
+    "domain": "Land Acquisition",
+    "state_applicability": ["Rajasthan", "Gujarat", "Madhya Pradesh", "All"],
+    "project_types": ["Solar", "Wind", "Transmission", "Hybrid Renewable"],
+    "text": "For utility-scale solar and transmission projects, land acquisition through standard private negotiations incurs an average delay of 12 to 18 months due to fragmented khatedari land records and title disputes. Precedents from Bhadla and Rewa indicate that appointing a dedicated Land Acquisition Officer (LAO) via the District Collector and providing a 12-15% voluntary settlement premium reduces acquisition cycle time by 45% (from 14 months down to 6-7 months). Institutional direct lease agreements with State Solar Park Utilities (RRECL/GPCL) eliminate stamp duty litigation and expedite Section 11/19 declarations under RFCTLARR Act 2013.",
+    "actionable_steps": [
+      "Engage District Collector's revenue cell for fast-track demarcation and title verification.",
+      "Adopt institutional mutual consent land compensation at 15% above circle rates to eliminate court injunctions.",
+      "Utilize drone-based DGPS digital cadastral mapping before physical boundary demarcation.",
+      "Execute escrow-backed direct DBT payment to landowners within 14 working days of registry."
+    ],
+    "estimated_timeline_reduction_months": 7,
+    "cost_savings_estimate_cr": 45.0,
+    "responsible_authority": "District Collector / Project Director (Land & Revenue)"
+  },
+  {
+    "id": "KB-MOEFCC-ENV-02",
+    "title": "MoEFCC Environmental & Forest Clearance Acceleration Framework (PARIVESH 2.0)",
+    "source": "Ministry of Environment, Forest and Climate Change (MoEFCC) Standard Operating Procedures",
+    "domain": "Environmental Clearance",
+    "state_applicability": ["All"],
+    "project_types": ["Thermal", "Hydro", "Transmission", "Solar"],
+    "text": "Forest Stage-I and Stage-II clearances through the PARIVESH portal average 8 to 14 months when queries regarding Compensatory Afforestation (CA) and NPV calculation are handled sequentially. Early pre-consultation meetings with the State Forest Department and engaging a QCI-NABET accredited environmental consultant for baseline EIA data collection concurrently with site survey saves up to 4 to 6 months. For linear transmission corridors and solar peripheral roads, tree felling enumeration should be conducted via mobile GIS app to obtain in-principle working permission under Rule 6(3) of Forest Conservation Rules.",
+    "actionable_steps": [
+      "Initiate pre-consultation with Regional Office of MoEFCC within 15 days of DPR approval.",
+      "Contract QCI-NABET accredited Category-A EIA consulting agency with prior power project experience.",
+      "Pre-identify non-forest land banks for Compensatory Afforestation in coordination with District Forest Officer (DFO).",
+      "Apply for Stage-I in-principle approval with concurrent Tree Translocation Plan."
+    ],
+    "estimated_timeline_reduction_months": 5,
+    "cost_savings_estimate_cr": 25.0,
+    "responsible_authority": "Chief Environmental Officer / State PCCF / MoEFCC Regional Office"
+  },
+  {
+    "id": "KB-CERC-CONTR-03",
+    "title": "EPC Contractor Performance Enforceability & Milestone-Linked Escrow Protocol",
+    "source": "CERC Standard EPC Bidding & Project Execution Guidelines",
+    "domain": "Contractor Track Record",
+    "state_applicability": ["All"],
+    "project_types": ["Solar", "Wind", "Thermal", "Transmission", "Hydro"],
+    "text": "Contractor delays account for 35% of overall power plant project slippage. Standard lump-sum advances create moral hazard. Best practice mandates milestone-linked disbursements based on physical verification (SCADA erection, string cabling, transformer foundation). Contracts must incorporate a delay liquidated damages (LD) clause of 0.5% of contract value per week of delay (up to 10% maximum cap), combined with an early-completion incentive of 0.25% per week. Instituting weekly automated digital Gantt chart progress sync with drone surveillance prevents stealth slippage.",
+    "actionable_steps": [
+      "Incorporate Liquidated Damages clause of 0.5% per week delay with strict performance bank guarantee (PBG) encashment covenants.",
+      "Switch payment milestones from calendar billing to verified physical progress gates (foundation, mounting, cabling, test charge).",
+      "Institute mandatory weekly tripartite project review (Owner, EPC Head, Lenders Independent Engineer).",
+      "Authorize contractor to deploy double-shift workforce with 15% nighttime overtime subsidy for civil structures."
+    ],
+    "estimated_timeline_reduction_months": 4,
+    "cost_savings_estimate_cr": 35.0,
+    "responsible_authority": "Project Management Unit (PMU) / Lead EPC Contractor / Owner's Engineer"
+  },
+  {
+    "id": "KB-MOP-SUPPLY-04",
+    "title": "Solar PV Module & Heavy Transformer Supply Chain Buffer Strategy",
+    "source": "Ministry of Power / MNRE ALMM Compliance & Global Freight Advisory",
+    "domain": "Supply Chain",
+    "state_applicability": ["All"],
+    "project_types": ["Solar", "Thermal", "Transmission", "Hybrid Renewable"],
+    "text": "Imported bifacial TOPCon/mono-PERC solar modules and 400kV/765kV power transformers experience 3 to 6 months port congestion, customs clearance, and factory backlog delays. Projects adopting dual-sourcing contracts (60% primary domestic ALMM tier-1 supplier + 40% secondary backup manufacturer) mitigate shipment blockades. Furthermore, booking dedicated railway rakes for bulk balance-of-plant (BOP) steel structures and dry-run testing power transformers at manufacturer works avoids site commissioning rejections.",
+    "actionable_steps": [
+      "Establish dual-vendor framework agreement under Approved List of Models and Manufacturers (ALMM).",
+      "Implement warehouse buffer staging at regional dry ports (ICD) 45 days prior to installation schedule.",
+      "Issue advance long-lead equipment procurement orders for Inverter Duty Transformers (IDT) and Power Transformers 9 months ahead.",
+      "Establish green-channel customs clearance protocol under Project Import Regulations."
+    ],
+    "estimated_timeline_reduction_months": 3,
+    "cost_savings_estimate_cr": 20.0,
+    "responsible_authority": "Head of Procurement & Supply Chain / Customs Logistics Officer"
+  },
+  {
+    "id": "KB-PFC-REC-FIN-05",
+    "title": "Financing & PPA Tariff Adoption Risk Mitigation Framework",
+    "source": "Power Finance Corporation (PFC) & REC Lending Guidelines for Independent Power Producers",
+    "domain": "Financing",
+    "state_applicability": ["All"],
+    "project_types": ["Solar", "Wind", "Thermal", "Transmission"],
+    "text": "Financing delays typically stem from pending Section 63 tariff adoption before State Electricity Regulatory Commissions (SERCs) and delayed equity infusion. Setting up a tripartite escrow arrangement involving SECI/NTPC as intermediary procurer and availing concessional debt under IREDA green window guarantees liquidity during civil construction. Establishing a LC (Letter of Credit) payment security mechanism prevents contractor credit starvation.",
+    "actionable_steps": [
+      "File petition for tariff adoption under Section 63 with SERC within 15 days of Letter of Award (LoA).",
+      "Structure multi-tranche debt disbursement aligned with verified engineering milestones via PFC/REC/IREDA.",
+      "Open Revolving Letter of Credit (LC) covering 1.5 months of peak construction billing.",
+      "Secure sovereign-backed Payment Security Mechanism (PSM) through intermediary procurer (SECI/NTPC)."
+    ],
+    "estimated_timeline_reduction_months": 3,
+    "cost_savings_estimate_cr": 18.0,
+    "responsible_authority": "Chief Financial Officer (CFO) / Lead Banker / SERC Legal Liaison"
+  },
+  {
+    "id": "KB-IMD-WEATHER-06",
+    "title": "Climate & Extreme Weather Construction Resiliency Management",
+    "source": "Indian Meteorological Department (IMD) & CEA Construction Safety Manual",
+    "domain": "Weather & Climate",
+    "state_applicability": ["Rajasthan", "Gujarat", "Tamil Nadu", "Odisha", "All"],
+    "project_types": ["Solar", "Wind", "Transmission", "Hydro"],
+    "text": "Extreme monsoon downpours in peninsular India and dust storm/extreme heat in Western Rajasthan disrupt foundational piling and module mounting work, causing 2 to 4 months of idle worker mobilization loss. Utilizing cast-in-situ precast concrete foundations, deploying anti-dust hydrophobic coatings, and instituting split-shift work hours (5:00 AM - 11:30 AM & 4:30 PM - 8:00 PM) during hot seasons preserves labor efficiency and prevents heat-stress shutdowns.",
+    "actionable_steps": [
+      "Implement precast modular pile foundations manufactured off-site to bypass wet weather concrete curing delays.",
+      "Integrate IMD hyperlocal 7-day weather radar API with construction scheduling software.",
+      "Adopt split-shift working protocols during peak summer months (April-June in Western India).",
+      "Construct peripheral contour drainage trenches before monsoon season to prevent park inundation."
+    ],
+    "estimated_timeline_reduction_months": 2,
+    "cost_savings_estimate_cr": 12.0,
+    "responsible_authority": "Site Project Director / Chief Safety Officer / EPC Construction Manager"
+  }
+]

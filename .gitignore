@@ -1,0 +1,28 @@
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+
+# Databases & Local State
+*.db
+*.sqlite
+*.sqlite3
+
+# Python Cache & Virtual Environments
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+venv/
+.venv/
+env/
+
+# Scratch & Temporary Logs
+scratch/
+*.log
+test.pdf
+
+# OS Specific
+.DS_Store
+Thumbs.db
+Desktop.ini
