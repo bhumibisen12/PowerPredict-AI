@@ -14,14 +14,19 @@ if sys.platform == "win32":
 import uvicorn
 from pathlib import Path
 
+import os
+
 ROOT_DIR = Path(__file__).resolve().parent
 if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
 
 if __name__ == "__main__":
+    host = os.environ.get("HOST", "0.0.0.0")
+    port = int(os.environ.get("PORT", 8000))
     print("=" * 70)
     print("[*] POWERPREDICT AI - NATIONAL POWER PROJECT PREDICTIVE PLATFORM")
     print("[*] Ministry of Power & CEA Calibrated Enterprise Decision Support")
-    print("[*] Starting Server on http://localhost:8000")
+    print(f"[*] Starting Server on http://{host}:{port}")
     print("=" * 70)
-    uvicorn.run("backend.app:app", host="127.0.0.1", port=8000, reload=False)
+    uvicorn.run("backend.app:app", host=host, port=port, reload=False)
+

@@ -26,7 +26,12 @@ SMTP_USERNAME = os.environ.get("SMTP_USERNAME", "")
 SMTP_PASSWORD = os.environ.get("SMTP_PASSWORD", "")
 SMTP_FROM = os.environ.get("SMTP_FROM", "PowerPredict AI <no-reply@powerpredict.ai>")
 ADMIN_EMAIL = os.environ.get("ADMIN_EMAIL", "admin@powerpredict.ai")
-SITE_URL = os.environ.get("SITE_URL", "http://localhost:8000")
+site_url_env = os.environ.get("SITE_URL") or os.environ.get("RENDER_EXTERNAL_URL") or os.environ.get("RAILWAY_STATIC_URL") or "http://localhost:8000"
+if site_url_env and not site_url_env.startswith("http://") and not site_url_env.startswith("https://"):
+    SITE_URL = f"https://{site_url_env}"
+else:
+    SITE_URL = site_url_env
+
 
 def get_db_connection():
     os.makedirs(AUTH_DB_PATH.parent, exist_ok=True)
