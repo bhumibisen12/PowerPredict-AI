@@ -52,8 +52,8 @@
     </div>
     <div class="gov-utility-right">
       <div class="student-disclaimer-pill" id="top-disclaimer-pill">
-        <i class="fa-solid fa-graduation-cap text-cyan"></i>
-        <span data-i18n="disclaimer_pill">Independent student project. Not affiliated with MoP, CEA or any government body. Uses synthetic data.</span>
+        <i class="fa-solid fa-flask-vial text-cyan"></i>
+        <span data-i18n="disclaimer_pill">Prototype &bull; Synthetic data &bull; Not a government site</span>
       </div>
       <button id="theme-toggle-btn" class="gov-theme-btn" title="Toggle Dark/Light Mode">
         <i class="fa-solid fa-moon" id="theme-icon"></i>
@@ -122,7 +122,7 @@
       <a href="#features" class="npp-nav-item" id="nav-item-features" data-i18n="menu_features">FEATURES</a>
       <a href="#how-it-works" class="npp-nav-item" id="nav-item-how" data-i18n="menu_how">HOW IT WORKS</a>
       <a href="#pricing" class="npp-nav-item" id="nav-item-pricing" data-i18n="menu_pricing">PRICING</a>
-      <a href="#case-studies" class="npp-nav-item" id="nav-item-cases" data-i18n="menu_cases">CASE STUDIES</a>
+      <a href="#case-studies" class="npp-nav-item" id="nav-item-cases" data-i18n="menu_cases">CEA BENCHMARKS</a>
       <a href="#about" class="npp-nav-item" id="nav-item-about" data-i18n="menu_about">ABOUT US</a>
 
       <div class="npp-nav-dropdown">
@@ -150,8 +150,11 @@
       </a>
 
       <div class="nav-auth-group" id="nav-auth-buttons">
-        <button id="nav-signup-btn" class="btn-primary-action btn-sm" onclick="showView('view-signup')" style="padding: 7px 18px; font-size: 0.82rem; border-radius: 6px;">
-          <i class="fa-solid fa-user-plus"></i> <span data-i18n="menu_signup">SIGN UP</span>
+        <button id="nav-demo-btn" class="btn-primary-action btn-sm" onclick="launchGuestDemo()" style="padding: 7px 16px; font-size: 0.82rem; border-radius: 6px; background: linear-gradient(135deg, #00f0ff, #0284c7); font-weight: 700; color: #000; box-shadow: 0 0 12px rgba(0,240,255,0.4);">
+          <i class="fa-solid fa-play"></i> Try Demo (Guest)
+        </button>
+        <button id="nav-login-btn" class="btn-ghost btn-sm" onclick="showView('view-login')" style="padding: 7px 14px; font-size: 0.82rem; border-radius: 6px;">
+          <i class="fa-solid fa-arrow-right-to-bracket"></i> Login
         </button>
       </div>
     </nav>
@@ -302,14 +305,14 @@
           </div>
 
           <div class="npp-hero-actions">
-            <button class="btn-npp-primary" id="hero-launch-btn">
-              <i class="fa-solid fa-chart-line"></i> <span data-i18n="btn_open_dashboard">Launch Predictive Dashboard</span>
+            <button class="btn-npp-primary" id="hero-demo-btn" onclick="launchGuestDemo()" style="background: linear-gradient(135deg, #00f0ff, #0284c7); color: #000; font-weight: 700; border: none; box-shadow: 0 0 16px rgba(0, 240, 255, 0.5);">
+              <i class="fa-solid fa-play"></i> <span>Try Demo (Instant Guest Access)</span>
             </button>
-            <button class="btn-npp-secondary" id="hero-login-btn">
-              <i class="fa-solid fa-shield-halved"></i> <span data-i18n="hero_cta_secondary">Enterprise Login</span>
+            <button class="btn-npp-secondary" id="hero-launch-btn">
+              <i class="fa-solid fa-gauge-high"></i> <span data-i18n="btn_open_dashboard">Dashboard</span>
             </button>
-            <button class="btn-npp-outline" onclick="scrollToSection('solution')">
-              <i class="fa-solid fa-robot"></i> <span data-i18n="nav_solution">Explore 5 AI Agents</span>
+            <button class="btn-npp-outline" onclick="showView('view-how-it-works')">
+              <i class="fa-solid fa-diagram-project"></i> <span>How It Works</span>
             </button>
           </div>
 
@@ -836,7 +839,7 @@
           <!-- Video Stage Screen -->
           <div class="video-screen-stage" id="video-stage">
             <!-- Hidden Audio Element for Pre-rendered Voice Narration -->
-            <audio id="process-video-audio" preload="auto" src="/static/assets/audio/full_walkthrough.wav"></audio>
+            <audio id="process-video-audio" preload="auto" src="/static/assets/audio/full_walkthrough.mp3"></audio>
 
             <!-- Top-Right Live Voice Narration Indicator -->
             <div class="video-voice-tag" id="video-voice-tag" onclick="toggleVideoVoice()" title="Click to Toggle Voice Narration">
@@ -1222,131 +1225,301 @@
   </div>
 
   <!-- =========================================================================
-       5. CASE STUDIES PAGE (PROVEN FIELD SUCCESS STORIES)
+       5. REAL CEA BENCHMARKS PAGE (EMPIRICAL GROUND TRUTH FROM CEA REPORTS)
        ========================================================================= -->
   <div id="view-case-studies" class="page-view sub-page-view">
     <div class="sub-page-hero">
-      <div class="sub-hero-badge"><i class="fa-solid fa-flask text-cyan"></i> SIMULATION BENCHMARKS</div>
-      <h1 class="sub-hero-title">Scenario Benchmark Studies</h1>
-      <p class="sub-hero-desc">Explore simulated scenario analyses illustrating how PowerPredict AI models risk factors, early warnings, and delay mitigations across power project archetypes.</p>
+      <div class="sub-hero-badge"><i class="fa-solid fa-building-columns text-cyan"></i> CENTRAL ELECTRICITY AUTHORITY (CEA) DATA</div>
+      <h1 class="sub-hero-title">Authentic CEA Mega-Project Benchmarks</h1>
+      <p class="sub-hero-desc">Empirical cost overrun and execution delay ground truth extracted directly from Central Electricity Authority (CEA) Monthly Broad Status Reports and Parliamentary Standing Committee findings.</p>
     </div>
 
     <div class="page-content-container">
+      <div class="cea-intro-notice glass-panel" style="padding: 18px 24px; margin-bottom: 28px; border-left: 4px solid #00f0ff; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+        <div>
+          <strong style="color: #00f0ff; font-size: 1rem;"><i class="fa-solid fa-circle-info"></i> Why Real Benchmarks Matter:</strong>
+          <p style="color: #94a3b8; font-size: 0.88rem; margin: 4px 0 0; line-height: 1.5;">
+            While PowerPredict AI models were trained on 6,000 synthetic archetypes, these 12 historical mega-projects represent authentic public-domain ground truth. They exhibit the severe non-linear delay tail (up to +168 months) that pure linear models miss.
+          </p>
+        </div>
+        <a href="/api/real-benchmarks" target="_blank" class="btn-outline-action btn-sm" style="text-decoration: none; padding: 8px 16px; border-radius: 6px; font-size: 0.82rem; white-space: nowrap;">
+          <i class="fa-solid fa-code"></i> View Raw JSON API
+        </a>
+      </div>
+
       <div class="case-studies-grid">
-        <!-- Case 1 -->
+        <!-- Project 1: Subansiri Lower -->
         <div class="case-card glass-panel">
           <div class="case-header">
-            <span class="case-sector-badge badge-solar"><i class="fa-solid fa-sun"></i> Solar Photovoltaic</span>
-            <span class="case-state"><i class="fa-solid fa-location-dot"></i> Jaisalmer, Rajasthan</span>
+            <span class="case-sector-badge badge-hydro"><i class="fa-solid fa-water"></i> Hydroelectric (2,000 MW)</span>
+            <span class="case-state"><i class="fa-solid fa-location-dot"></i> Arunachal / Assam Border</span>
           </div>
-          <h3 class="case-title">500 MW Ultra Mega Solar Park</h3>
-          <p class="case-desc">Private revenue land demarcation disputes across 800 desert acres and inverter delivery delays threatened a 10-month deadline breach.</p>
+          <h3 class="case-title">Subansiri Lower Hydroelectric Project (NHPC)</h3>
+          <p class="case-desc">Mega run-of-river concrete gravity dam stalled by downstream river basin anti-dam protests and National Green Tribunal (NGT) safety reviews.</p>
           <div class="case-comparison-grid">
             <div class="comp-col before">
-              <span class="comp-label">Unmitigated Forecast</span>
-              <div class="comp-val text-danger">28 Months COD</div>
-              <div class="comp-cost text-danger">₹680 Cr (+₹180 Cr Overrun)</div>
+              <span class="comp-label">Sanctioned Baseline</span>
+              <div class="comp-val" style="color: #94a3b8;">60 Months COD</div>
+              <div class="comp-cost" style="color: #94a3b8;">₹6,285.3 Cr Baseline</div>
             </div>
             <div class="comp-col after">
-              <span class="comp-label">With PowerPredict AI</span>
-              <div class="comp-val text-success">20 Months COD</div>
-              <div class="comp-cost text-success">₹620 Cr (Mitigated)</div>
+              <span class="comp-label">Actual COD Status</span>
+              <div class="comp-val text-danger">228 Mo (+168 Mo Delay)</div>
+              <div class="comp-cost text-danger">₹21,247.0 Cr (+238.0% Overrun)</div>
             </div>
           </div>
-          <div class="case-saved-banner">
-            <i class="fa-solid fa-shield-heart text-success"></i>
-            <strong>Preserved: 8 Months Saved & ₹60.0 Crore Capital Saved</strong>
+          <div style="background: rgba(239, 68, 68, 0.08); border-radius: 6px; padding: 10px 14px; margin-top: 14px; font-size: 0.82rem; color: #fca5a5;">
+            <strong>Documented Root Causes:</strong> Submergence protests in downstream Assam &bull; NGT committee review &bull; Brahmaputra monsoon inundations.
           </div>
-          <p class="case-details"><strong>AI Intervention:</strong> DGPS automated land demarcation survey package + domestic module buffer procurement trigger synthesized by RAG agent.</p>
+          <div style="margin-top: 10px; font-size: 0.75rem; color: #64748b;">
+            <i class="fa-solid fa-book-bookmark"></i> Source: CEA Broad Status Report & Lok Sabha Standing Committee
+          </div>
         </div>
 
-        <!-- Case 2 -->
+        <!-- Project 2: Barh Super Thermal -->
         <div class="case-card glass-panel">
           <div class="case-header">
-            <span class="case-sector-badge badge-thermal"><i class="fa-solid fa-fire"></i> Supercritical Thermal</span>
-            <span class="case-state"><i class="fa-solid fa-location-dot"></i> Anpara, Uttar Pradesh</span>
+            <span class="case-sector-badge badge-thermal"><i class="fa-solid fa-fire"></i> Supercritical Coal (3,300 MW)</span>
+            <span class="case-state"><i class="fa-solid fa-location-dot"></i> Barh, Bihar</span>
           </div>
-          <h3 class="case-title">2x660 MW Supercritical Thermal Expansion</h3>
-          <p class="case-desc">Stage-II MoEFCC forest clearance delay and civil contractor labor shortages threatened severe interest during construction (IDC) ballooning.</p>
+          <h3 class="case-title">Barh Super Thermal Power Station (NTPC)</h3>
+          <p class="case-desc">Major coal power station delayed by international equipment supplier contractual termination and civil re-tendering across multi-year cycles.</p>
           <div class="case-comparison-grid">
             <div class="comp-col before">
-              <span class="comp-label">Unmitigated Forecast</span>
-              <div class="comp-val text-danger">42 Months COD</div>
-              <div class="comp-cost text-danger">₹1,450 Cr (+₹250 Cr Overrun)</div>
+              <span class="comp-label">Sanctioned Baseline</span>
+              <div class="comp-val" style="color: #94a3b8;">48 Months COD</div>
+              <div class="comp-cost" style="color: #94a3b8;">₹8,693.0 Cr Baseline</div>
             </div>
             <div class="comp-col after">
-              <span class="comp-label">With PowerPredict AI</span>
-              <div class="comp-val text-success">32 Months COD</div>
-              <div class="comp-cost text-success">₹1,355 Cr (Mitigated)</div>
+              <span class="comp-label">Actual COD Status</span>
+              <div class="comp-val text-danger">180 Mo (+132 Mo Delay)</div>
+              <div class="comp-cost text-danger">₹21,399.0 Cr (+146.2% Overrun)</div>
             </div>
           </div>
-          <div class="case-saved-banner">
-            <i class="fa-solid fa-shield-heart text-success"></i>
-            <strong>Preserved: 10 Months Saved & ₹95.0 Crore Capital Saved</strong>
+          <div style="background: rgba(239, 68, 68, 0.08); border-radius: 6px; padding: 10px 14px; margin-top: 14px; font-size: 0.82rem; color: #fca5a5;">
+            <strong>Documented Root Causes:</strong> Russian boiler contractor termination &bull; Civil mobilization re-tendering &bull; Ash pond land acquisition disputes.
           </div>
-          <p class="case-details"><strong>AI Intervention:</strong> Parivesh fast-track expedited clearance dossier + milestone escrow release for double-shift civil contractor teams.</p>
+          <div style="margin-top: 10px; font-size: 0.75rem; color: #64748b;">
+            <i class="fa-solid fa-book-bookmark"></i> Source: Central Electricity Authority (CEA) Monthly Monitoring Review
+          </div>
         </div>
 
-        <!-- Case 3 -->
+        <!-- Project 3: Bhadla Solar Park -->
         <div class="case-card glass-panel">
           <div class="case-header">
-            <span class="case-sector-badge badge-transmission"><i class="fa-solid fa-tower-broadcast"></i> Interstate Transmission</span>
-            <span class="case-state"><i class="fa-solid fa-location-dot"></i> Kutch-Vadodara, Gujarat</span>
+            <span class="case-sector-badge badge-solar"><i class="fa-solid fa-sun"></i> Solar Photovoltaic (2,245 MW)</span>
+            <span class="case-state"><i class="fa-solid fa-location-dot"></i> Jodhpur/Phalodi, Rajasthan</span>
           </div>
-          <h3 class="case-title">765 kV D/C Inter-Regional Transmission Corridor</h3>
-          <p class="case-desc">Linear Right-of-Way (RoW) compensation litigation across 340 km of agricultural land was preventing tower erection and line stringing.</p>
+          <h3 class="case-title">Bhadla Solar Park (Phase-I to IV)</h3>
+          <p class="case-desc">World's largest single-location solar installation at completion, with minimal cost overrun (+5.6%) but critical transmission corridor challenges.</p>
           <div class="case-comparison-grid">
             <div class="comp-col before">
-              <span class="comp-label">Unmitigated Forecast</span>
-              <div class="comp-val text-danger">24 Months COD</div>
-              <div class="comp-cost text-danger">₹485 Cr (+₹65 Cr Overrun)</div>
+              <span class="comp-label">Sanctioned Baseline</span>
+              <div class="comp-val" style="color: #94a3b8;">24 Months COD</div>
+              <div class="comp-cost" style="color: #94a3b8;">₹9,850.0 Cr Baseline</div>
             </div>
             <div class="comp-col after">
-              <span class="comp-label">With PowerPredict AI</span>
-              <div class="comp-val text-success">18 Months COD</div>
-              <div class="comp-cost text-success">₹443 Cr (Mitigated)</div>
+              <span class="comp-label">Actual COD Status</span>
+              <div class="comp-val text-warning">34 Mo (+10 Mo Delay)</div>
+              <div class="comp-cost text-success">₹10,400.0 Cr (+5.6% Overrun)</div>
             </div>
           </div>
-          <div class="case-saved-banner">
-            <i class="fa-solid fa-shield-heart text-success"></i>
-            <strong>Preserved: 6 Months Saved & ₹42.0 Crore Capital Saved</strong>
+          <div style="background: rgba(16, 185, 129, 0.08); border-radius: 6px; padding: 10px 14px; margin-top: 14px; font-size: 0.82rem; color: #6ee7b7;">
+            <strong>Documented Root Causes:</strong> Great Indian Bustard (GIB) overhead transmission litigation &bull; Extreme Thar summer heatwaves &bull; Substation evacuation pacing.
           </div>
-          <p class="case-details"><strong>AI Intervention:</strong> District Magistrate direct RoW compensation formula + fast-track statutory tree felling compensation bundles.</p>
+          <div style="margin-top: 10px; font-size: 0.75rem; color: #64748b;">
+            <i class="fa-solid fa-book-bookmark"></i> Source: Ministry of New and Renewable Energy (MNRE) & CEA State Reports
+          </div>
+        </div>
+
+        <!-- Project 4: Tapovan Vishnugad -->
+        <div class="case-card glass-panel">
+          <div class="case-header">
+            <span class="case-sector-badge badge-hydro"><i class="fa-solid fa-mountain"></i> Run-of-River Hydro (520 MW)</span>
+            <span class="case-state"><i class="fa-solid fa-location-dot"></i> Chamoli, Uttarakhand</span>
+          </div>
+          <h3 class="case-title">Tapovan Vishnugad Hydroelectric Project (NTPC)</h3>
+          <p class="case-desc">High-head Himalayan run-of-river project severely impacted by geological fault surprises, tunnel boring machine entrapment, and 2021 flash floods.</p>
+          <div class="case-comparison-grid">
+            <div class="comp-col before">
+              <span class="comp-label">Sanctioned Baseline</span>
+              <div class="comp-val" style="color: #94a3b8;">54 Months COD</div>
+              <div class="comp-cost" style="color: #94a3b8;">₹2,978.5 Cr Baseline</div>
+            </div>
+            <div class="comp-col after">
+              <span class="comp-label">Actual COD Status</span>
+              <div class="comp-val text-danger">216 Mo (+162 Mo Delay)</div>
+              <div class="comp-cost text-danger">₹7,103.0 Cr (+138.5% Overrun)</div>
+            </div>
+          </div>
+          <div style="background: rgba(239, 68, 68, 0.08); border-radius: 6px; padding: 10px 14px; margin-top: 14px; font-size: 0.82rem; color: #fca5a5;">
+            <strong>Documented Root Causes:</strong> Tunnel Boring Machine (TBM) water ingress & entrapment &bull; Feb 2021 Chamoli flash flood disaster &bull; Himalayan fragile thrust zone.
+          </div>
+          <div style="margin-top: 10px; font-size: 0.75rem; color: #64748b;">
+            <i class="fa-solid fa-book-bookmark"></i> Source: CEA Broad Status Report on Hydroelectric Projects
+          </div>
+        </div>
+
+        <!-- Project 5: Raigarh-Pugalur 800 kV HVDC -->
+        <div class="case-card glass-panel">
+          <div class="case-header">
+            <span class="case-sector-badge badge-transmission"><i class="fa-solid fa-tower-broadcast"></i> 800 kV UHVDC (6,000 MW)</span>
+            <span class="case-state"><i class="fa-solid fa-location-dot"></i> Chhattisgarh to Tamil Nadu (1,830 km)</span>
+          </div>
+          <h3 class="case-title">Raigarh-Pugalur ±800 kV HVDC Transmission Link</h3>
+          <p class="case-desc">High-capacity inter-regional clean energy corridor linking thermal and renewable generation in Chhattisgarh to southern grid demand centers.</p>
+          <div class="case-comparison-grid">
+            <div class="comp-col before">
+              <span class="comp-label">Sanctioned Baseline</span>
+              <div class="comp-val" style="color: #94a3b8;">36 Months COD</div>
+              <div class="comp-cost" style="color: #94a3b8;">₹14,756.0 Cr Baseline</div>
+            </div>
+            <div class="comp-col after">
+              <span class="comp-label">Actual COD Status</span>
+              <div class="comp-val text-warning">48 Mo (+12 Mo Delay)</div>
+              <div class="comp-cost text-success">₹15,480.0 Cr (+4.9% Overrun)</div>
+            </div>
+          </div>
+          <div style="background: rgba(16, 185, 129, 0.08); border-radius: 6px; padding: 10px 14px; margin-top: 14px; font-size: 0.82rem; color: #6ee7b7;">
+            <strong>Documented Root Causes:</strong> Linear Right-of-Way (RoW) compensation in fertile agricultural lands &bull; COVID-19 converter valve testing delays &bull; Forest diversion in MP/Maharashtra.
+          </div>
+          <div style="margin-top: 10px; font-size: 0.75rem; color: #64748b;">
+            <i class="fa-solid fa-book-bookmark"></i> Source: Central Electricity Authority (CEA) Power System Monitoring Division
+          </div>
+        </div>
+
+        <!-- Project 6: North Karanpura Super Thermal -->
+        <div class="case-card glass-panel">
+          <div class="case-header">
+            <span class="case-sector-badge badge-thermal"><i class="fa-solid fa-fire"></i> Supercritical Coal (1,980 MW)</span>
+            <span class="case-state"><i class="fa-solid fa-location-dot"></i> Chatra, Jharkhand</span>
+          </div>
+          <h3 class="case-title">North Karanpura Super Thermal Power Project (NTPC)</h3>
+          <p class="case-desc">First pit-head plant in India equipped with an Air Cooled Condenser (ACC) to minimize water footprint, delayed over two decades due to coal block overlaps.</p>
+          <div class="case-comparison-grid">
+            <div class="comp-col before">
+              <span class="comp-label">Sanctioned Baseline</span>
+              <div class="comp-val" style="color: #94a3b8;">48 Months COD</div>
+              <div class="comp-cost" style="color: #94a3b8;">₹7,112.0 Cr Baseline</div>
+            </div>
+            <div class="comp-col after">
+              <span class="comp-label">Actual COD Status</span>
+              <div class="comp-val text-danger">240 Mo (+192 Mo Delay)</div>
+              <div class="comp-cost text-danger">₹15,800.0 Cr (+122.2% Overrun)</div>
+            </div>
+          </div>
+          <div style="background: rgba(239, 68, 68, 0.08); border-radius: 6px; padding: 10px 14px; margin-top: 14px; font-size: 0.82rem; color: #fca5a5;">
+            <strong>Documented Root Causes:</strong> Overlap between coal mining blocks & power station boundary &bull; Local R&R compensation protests &bull; Heavy civil foundation rework.
+          </div>
+          <div style="margin-top: 10px; font-size: 0.75rem; color: #64748b;">
+            <i class="fa-solid fa-book-bookmark"></i> Source: CEA Monthly Broad Status Report on Thermal Power Projects
+          </div>
         </div>
       </div>
     </div>
   </div>
 
   <!-- =========================================================================
-       6. ABOUT US PAGE (CREDIBILITY, MISSION & LEADERSHIP)
+       6. ABOUT US PAGE (DATASET, METHODOLOGY, LIMITATIONS & ARCHITECTURE)
        ========================================================================= -->
   <div id="view-about" class="page-view sub-page-view">
     <div class="sub-page-hero">
-      <div class="sub-hero-badge"><i class="fa-solid fa-landmark text-amber"></i> OUR HERITAGE & MISSION</div>
-      <h1 class="sub-hero-title">Pioneering Predictive Infrastructure</h1>
-      <p class="sub-hero-desc">PowerPredict AI was founded by senior power system engineers and applied machine learning researchers dedicated to eliminating execution bottlenecks in India's capital infrastructure.</p>
+      <div class="sub-hero-badge"><i class="fa-solid fa-graduation-cap text-cyan"></i> ACADEMIC RESEARCH PROJECT</div>
+      <h1 class="sub-hero-title">About PowerPredict AI</h1>
+      <p class="sub-hero-desc">An independent academic research project combining machine learning, multi-factor risk attribution, and statutory retrieval for capital infrastructure delay forecasting.</p>
     </div>
 
     <div class="page-content-container">
-      <!-- Mission & Vision -->
-      <div class="mission-vision-grid">
-        <div class="mission-box glass-panel">
-          <div class="card-icon-wrap icon-cyan"><i class="fa-solid fa-bullseye"></i></div>
-          <h3>Our Mission</h3>
-          <p>To provide predictive analytics and early warning signals for capital infrastructure projects, transforming reactive milestone tracking into data-driven foresight.</p>
+      <!-- Section 1: Dataset Generation Methodology -->
+      <div class="about-section-card glass-panel" style="padding: 28px; margin-bottom: 24px; border-top: 3px solid #00f0ff;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+          <div class="card-icon-wrap icon-cyan" style="width: 44px; height: 44px; font-size: 20px;"><i class="fa-solid fa-database"></i></div>
+          <h2 style="font-size: 1.35rem; color: #fff; margin: 0;">Dataset Synthesis & Generation Logic</h2>
         </div>
-        <div class="mission-box glass-panel">
-          <div class="card-icon-wrap icon-amber"><i class="fa-solid fa-eye"></i></div>
-          <h3>Our Vision</h3>
-          <p>A modern decision platform where power project schedules and cost overruns can be analyzed, simulated, and de-risked using machine learning and regulatory intelligence.</p>
+        <p style="color: #94a3b8; font-size: 0.92rem; line-height: 1.6; margin-bottom: 16px;">
+          Because comprehensive, row-level historical delay logs across Indian power projects are dispersed and non-standardized across state entities, the training dataset was created via a <strong>stochastic Monte Carlo simulation generator</strong> (<code style="color: #00f0ff;">backend/data_generator.py</code>) comprising <strong>6,000 synthetic project archetypes</strong>.
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 16px;">
+          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 16px;">
+            <strong style="color: #00f0ff; font-size: 0.9rem; display: block; margin-bottom: 6px;">36 States & 19 Technology Archetypes</strong>
+            <p style="color: #94a3b8; font-size: 0.84rem; margin: 0; line-height: 1.5;">Covers ground-mounted solar, floating solar, wind farms, supercritical coal, large hydro dam, run-of-river, HVDC corridors, BESS, green hydrogen, and biomass.</p>
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 16px;">
+            <strong style="color: #f59e0b; font-size: 0.9rem; display: block; margin-bottom: 6px;">6 Orthogonal Hazard Vectors</strong>
+            <p style="color: #94a3b8; font-size: 0.84rem; margin: 0; line-height: 1.5;">Incorporates state-level land litigation rates, regional monsoon patterns, contractor track records (Tier-1 to Tier-3), and environmental clearance tiers (A vs B).</p>
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 16px;">
+            <strong style="color: #10b981; font-size: 0.9rem; display: block; margin-bottom: 6px;">Zero Circular Formula Leakage</strong>
+            <p style="color: #94a3b8; font-size: 0.84rem; margin: 0; line-height: 1.5;">Target labels (cost overrun % and timeline delay) are computed with non-linear interaction terms and log-normal stochastic variance (&sigma; = 0.08 - 0.12), ensuring the model cannot invert a deterministic formula.</p>
+          </div>
         </div>
       </div>
 
-      <!-- Project Developer & Researcher Profile -->
+      <!-- Section 2: Transparent Limitations -->
+      <div class="about-section-card glass-panel" style="padding: 28px; margin-bottom: 24px; border-top: 3px solid #f59e0b;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+          <div class="card-icon-wrap icon-amber" style="width: 44px; height: 44px; font-size: 20px;"><i class="fa-solid fa-triangle-exclamation"></i></div>
+          <h2 style="font-size: 1.35rem; color: #fff; margin: 0;">Known Project Limitations</h2>
+        </div>
+        <ul style="color: #94a3b8; font-size: 0.9rem; line-height: 1.7; padding-left: 20px; margin: 0;">
+          <li><strong>Synthetic Training Data:</strong> While benchmarked against 12 authentic CEA mega-projects, the regression models (Cost R²: 0.7491, Timeline R²: 0.8552) were trained on synthetic distributions and have not yet undergone validation on exhaustive historical real-world enterprise datasets.</li>
+          <li><strong>Heuristic Mitigation Estimates:</strong> Time and capital preservation figures are computed using template recovery percentages derived from statutory guidelines, rather than real-time contractual renegotiations.</li>
+          <li><strong>Prototype Integrations:</strong> Grid SCADA streams, ERP connectors (SAP/Primavera), and SMS/WhatsApp dispatches are simulated architectural prototypes. Email notification is operational via SMTP.</li>
+        </ul>
+      </div>
+
+      <!-- Section 3: 5-Agent Architecture Flowchart -->
+      <div class="about-section-card glass-panel" style="padding: 28px; margin-bottom: 24px; border-top: 3px solid #a855f7;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+          <div class="card-icon-wrap icon-purple" style="width: 44px; height: 44px; font-size: 20px;"><i class="fa-solid fa-network-wired"></i></div>
+          <h2 style="font-size: 1.35rem; color: #fff; margin: 0;">5-Agent Decision-Support Architecture</h2>
+        </div>
+        <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px;">
+          The system operates a multi-agent orchestration pipeline where specialized co-pilots execute staged analytical tasks:
+        </p>
+
+        <div style="display: flex; flex-direction: column; gap: 12px; max-width: 800px; margin: 0 auto;">
+          <div style="background: rgba(0, 240, 255, 0.08); border: 1px solid rgba(0, 240, 255, 0.3); border-radius: 8px; padding: 12px 18px; text-align: center;">
+            <strong style="color: #00f0ff;">DPR Project Input Payload</strong> (State, Capacity MW, Estimated Cost & Timeline, 6 Risk Sliders)
+          </div>
+          <div style="text-align: center; color: #64748b; font-size: 1.2rem;"><i class="fa-solid fa-arrow-down"></i></div>
+          <div style="background: rgba(168, 85, 247, 0.08); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: 8px; padding: 12px 18px; text-align: center;">
+            <strong style="color: #c084fc;">Multi-Agent Orchestrator</strong> (<code style="color: #c084fc;">backend/agents/orchestrator.py</code>)
+          </div>
+          <div style="text-align: center; color: #64748b; font-size: 1.2rem;"><i class="fa-solid fa-arrow-down"></i></div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
+            <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 12px; text-align: center;">
+              <span class="badge-cyan" style="display: inline-block; margin-bottom: 4px;">Agent 1: Cost</span>
+              <div style="color: #fff; font-size: 0.85rem;">XGBoost Cost Regressor (R²: 0.749)</div>
+            </div>
+            <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 12px; text-align: center;">
+              <span class="badge-cyan" style="display: inline-block; margin-bottom: 4px;">Agent 2: Timeline</span>
+              <div style="color: #fff; font-size: 0.85rem;">XGBoost Timeline Regressor (R²: 0.855)</div>
+            </div>
+            <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 12px; text-align: center;">
+              <span class="badge-amber" style="display: inline-block; margin-bottom: 4px;">Agent 3: Hotspots</span>
+              <div style="color: #fff; font-size: 0.85rem;">6-Vector Threat Radar Formulation</div>
+            </div>
+          </div>
+          <div style="text-align: center; color: #64748b; font-size: 1.2rem;"><i class="fa-solid fa-arrow-down"></i></div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px;">
+            <div style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 12px 16px; text-align: center;">
+              <span class="badge-success" style="display: inline-block; margin-bottom: 4px;">Agent 4: Statutory Retrieval</span>
+              <div style="color: #fff; font-size: 0.85rem;">TF-IDF Retrieval over 6 Curated Statutory Frameworks</div>
+            </div>
+            <div style="background: rgba(59, 130, 246, 0.08); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 8px; padding: 12px 16px; text-align: center;">
+              <span class="badge-blue" style="display: inline-block; margin-bottom: 4px;">Agent 5: Stakeholder Coordination</span>
+              <div style="color: #fff; font-size: 0.85rem;">Active Email Dispatch & SHA-256 Evidence Seal</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4: Project Developer & Researcher Profile -->
       <div class="team-section mt-4">
         <div class="section-title-wrap text-center">
           <span class="eyebrow">DEVELOPER & RESEARCH LEAD</span>
-          <h2 class="section-title-lg">Project Lead & AI Researcher</h2>
+          <h2 class="section-title-lg">Author & AI Researcher</h2>
         </div>
         <div class="developer-profile-wrap" style="max-width: 680px; margin: 0 auto;">
           <div class="team-card glass-panel" style="padding: 32px 24px; text-align: center;">
@@ -1356,14 +1529,17 @@
             <h3 class="team-name" style="font-size: 1.5rem; margin-bottom: 4px; font-weight: 700; color: #fff;">Bhumi Bisen</h3>
             <span class="team-role" style="display: block; font-size: 0.95rem; color: #00f0ff; font-weight: 600; margin-bottom: 14px;">Lead Developer & AI Infrastructure Researcher</span>
             <p class="team-bio" style="color: var(--text-secondary, #94a3b8); line-height: 1.6; font-size: 0.95rem; margin-bottom: 24px;">
-              Independent developer and researcher behind PowerPredict AI. Built as an academic research project focused on predicting capital infrastructure delays and cost overruns through machine learning (XGBoost), agentic multi-agent orchestration, and statutory regulatory intelligence (RAG).
+              Independent developer and researcher behind PowerPredict AI. Built as an academic research project focused on predicting capital infrastructure delays and cost overruns through machine learning (XGBoost), agentic multi-agent orchestration, and statutory regulatory intelligence.
             </p>
             <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
               <a href="https://github.com/bhumibisen12/PowerPredict-AI" target="_blank" rel="noopener noreferrer" class="btn-primary-action" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; padding: 10px 20px;">
-                <i class="fa-brands fa-github"></i> GitHub: bhumibisen12/PowerPredict-AI
+                <i class="fa-brands fa-github"></i> GitHub Repository
               </a>
               <a href="https://linkedin.com/in/bhumibisen" target="_blank" rel="noopener noreferrer" class="btn-outline-action" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; padding: 10px 20px;">
                 <i class="fa-brands fa-linkedin"></i> LinkedIn Profile
+              </a>
+              <a href="https://github.com/bhumibisen12" target="_blank" rel="noopener noreferrer" class="btn-outline-action" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; padding: 10px 20px;">
+                <i class="fa-solid fa-file-user"></i> Resume / Profile
               </a>
             </div>
           </div>
@@ -1735,7 +1911,33 @@
           <p class="login-subtitle" data-i18n="login_subtitle">Enterprise Infrastructure Decision Support Portal</p>
         </div>
 
+        <!-- Recruiter / Evaluator Fast-Track Guest Access -->
+        <div style="background: rgba(0, 240, 255, 0.08); border: 1px solid rgba(0, 240, 255, 0.35); border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; text-align: center;">
+          <div style="color: #00f0ff; font-weight: 700; font-size: 0.95rem; margin-bottom: 4px;">
+            <i class="fa-solid fa-bolt"></i> Recruiter / Evaluator Fast-Track
+          </div>
+          <p style="font-size: 0.82rem; color: #94a3b8; margin-bottom: 10px; line-height: 1.4;">
+            Skip login, password entry, and role selection. Open the live analytical dashboard immediately with all features unlocked.
+          </p>
+          <button type="button" class="btn-primary-action w-100" onclick="launchGuestDemo()" style="padding: 10px; font-size: 0.88rem; background: linear-gradient(135deg, #00f0ff, #0284c7); color: #000; font-weight: 700;">
+            <i class="fa-solid fa-play"></i> Launch Guest Demo (Instant Access)
+          </button>
+        </div>
+
         <!-- Role-Based Guidance Callout for First-Time Users -->
+        <!-- Recruiter / Evaluator Fast-Track Guest Access -->
+        <div style="background: rgba(0, 240, 255, 0.08); border: 1px solid rgba(0, 240, 255, 0.35); border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; text-align: center;">
+          <div style="color: #00f0ff; font-weight: 700; font-size: 0.95rem; margin-bottom: 4px;">
+            <i class="fa-solid fa-bolt"></i> Recruiter / Evaluator Fast-Track
+          </div>
+          <p style="font-size: 0.82rem; color: #94a3b8; margin-bottom: 10px; line-height: 1.4;">
+            No email verification needed to evaluate. Launch the live predictive workbench directly as a demo guest.
+          </p>
+          <button type="button" class="btn-primary-action w-100" onclick="launchGuestDemo()" style="padding: 10px; font-size: 0.88rem; background: linear-gradient(135deg, #00f0ff, #0284c7); color: #000; font-weight: 700;">
+            <i class="fa-solid fa-play"></i> Launch Guest Demo (Instant Access)
+          </button>
+        </div>
+
         <div class="login-role-guide-alert">
           <div class="guide-alert-icon"><i class="fa-solid fa-circle-info text-cyan"></i></div>
           <div class="guide-alert-text">
@@ -1848,7 +2050,7 @@
     <div class="npp-dashboard-banner-wrap">
       <!-- 4 Top Visual Category Cards -->
       <div class="npp-top-category-cards">
-        <div class="npp-cat-card" style="background-image: url('/static/assets/dash_installed.jpg');">
+        <div class="npp-cat-card" style="background-image: url('/static/assets/dash_installed.webp');">
           <div class="npp-cat-overlay"></div>
           <div class="npp-cat-content">
             <span class="npp-cat-label">INSTALLED CAPACITY</span>
@@ -1856,7 +2058,7 @@
           </div>
         </div>
 
-        <div class="npp-cat-card" style="background-image: url('/static/assets/dash_generation.jpg');">
+        <div class="npp-cat-card" style="background-image: url('/static/assets/dash_generation.webp');">
           <div class="npp-cat-overlay"></div>
           <div class="npp-cat-content">
             <span class="npp-cat-label">DAILY GENERATION</span>
@@ -1864,7 +2066,7 @@
           </div>
         </div>
 
-        <div class="npp-cat-card" style="background-image: url('/static/assets/dash_transmission.jpg');">
+        <div class="npp-cat-card" style="background-image: url('/static/assets/dash_transmission.webp');">
           <div class="npp-cat-overlay"></div>
           <div class="npp-cat-content">
             <span class="npp-cat-label">TRANSMISSION</span>
@@ -1872,7 +2074,7 @@
           </div>
         </div>
 
-        <div class="npp-cat-card" style="background-image: url('/static/assets/dash_realtime.jpg');">
+        <div class="npp-cat-card" style="background-image: url('/static/assets/dash_realtime.webp');">
           <div class="npp-cat-overlay"></div>
           <div class="npp-cat-content">
             <span class="npp-cat-label">REAL TIME DATA (SOURCE-MERIT INDIA)</span>
@@ -2802,6 +3004,19 @@
           </div>
           <h2 class="login-title">PowerPredict <span class="gradient-text">AI</span></h2>
           <p class="login-subtitle">Official Infrastructure Account Registration</p>
+        </div>
+
+        <!-- Recruiter / Evaluator Fast-Track Guest Access -->
+        <div style="background: rgba(0, 240, 255, 0.08); border: 1px solid rgba(0, 240, 255, 0.35); border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; text-align: center;">
+          <div style="color: #00f0ff; font-weight: 700; font-size: 0.95rem; margin-bottom: 4px;">
+            <i class="fa-solid fa-bolt"></i> Recruiter / Evaluator Fast-Track
+          </div>
+          <p style="font-size: 0.82rem; color: #94a3b8; margin-bottom: 10px; line-height: 1.4;">
+            No email verification needed to evaluate. Launch the live predictive workbench directly as a demo guest.
+          </p>
+          <button type="button" class="btn-primary-action w-100" onclick="launchGuestDemo()" style="padding: 10px; font-size: 0.88rem; background: linear-gradient(135deg, #00f0ff, #0284c7); color: #000; font-weight: 700;">
+            <i class="fa-solid fa-play"></i> Launch Guest Demo (Instant Access)
+          </button>
         </div>
 
         <div class="login-role-guide-alert">

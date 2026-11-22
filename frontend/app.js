@@ -21,8 +21,8 @@ const I18N = {
     top_help: "Help",
     lbl_select_lang: "Select Language",
     skip_to_main: "Skip to main content",
-    pushp_tag: "Independent student project. Not affiliated with MoP, CEA or any government body. Uses synthetic data.",
-    disclaimer_pill: "Independent student project. Not affiliated with MoP, CEA or any government body. Uses synthetic data.",
+    pushp_tag: "Prototype • Synthetic data • Not a government site",
+    disclaimer_pill: "Prototype • Synthetic data • Not a government site",
     npp_sub_tag: "AI-Powered Capital Project Delay & Cost Overrun Forecasting",
     menu_home: "HOME",
     menu_features: "FEATURES",
@@ -237,8 +237,8 @@ const I18N = {
     top_help: "सहायता",
     lbl_select_lang: "भाषा चुनें",
     skip_to_main: "मुख्य सामग्री पर जाएं",
-    pushp_tag: "स्वतंत्र छात्र प्रोजेक्ट। MoP, CEA या किसी सरकारी निकाय से संबद्ध नहीं। सिंथेटिक डेटा का उपयोग करता है।",
-    disclaimer_pill: "स्वतंत्र छात्र प्रोजेक्ट। MoP, CEA या किसी सरकारी निकाय से संबद्ध नहीं। सिंथेटिक डेटा का उपयोग करता है।",
+    pushp_tag: "प्रोटोटाइप • सिंथेटिक डेटा • कोई सरकारी साइट नहीं",
+    disclaimer_pill: "प्रोटोटाइप • सिंथेटिक डेटा • कोई सरकारी साइट नहीं",
     npp_sub_tag: "AI-संचालित पूंजीगत परियोजना विलंब एवं लागत वृद्धि पूर्वानुमान",
     menu_home: "होम",
     menu_features: "विशेषताएं",
@@ -494,9 +494,11 @@ function setupRouting() {
   safeBind("brand-title-link", "click", () => showView("view-home"));
   safeBind("nav-item-home", "click", (e) => { e.preventDefault(); showView("view-home"); });
   safeBind("nav-login-btn", "click", () => showView("view-login"));
+  safeBind("nav-demo-btn", "click", () => launchGuestDemo());
   safeBind("nav-dashboard-btn", "click", () => showView("view-dashboard"));
   safeBind("nav-dashboard-link", "click", (e) => { e.preventDefault(); showView("view-dashboard"); });
   safeBind("top-disclaimer-pill", "click", () => showView("view-home"));
+  safeBind("hero-demo-btn", "click", () => launchGuestDemo());
   safeBind("hero-launch-btn", "click", () => showView("view-dashboard"));
   safeBind("hero-login-btn", "click", () => showView("view-login"));
   safeBind("demo-launch-btn", "click", () => showView("view-dashboard"));
@@ -540,17 +542,17 @@ function setupFontResizer() {
 let currentSlideIndex = 0;
 const slidesData = [
   {
-    bg: "/static/assets/npp_hero_bg.jpg",
+    bg: "/static/assets/npp_hero_bg.webp",
     title: `A Centralized <span class="cursive-gold">Platform</span> for Collation and <br><span class="cursive-gold cursive-large">Dissemination</span> of Indian <br><span class="npp-sector-bold">Power Sector</span>`,
     sub: "Dual-model XGBoost regression engine forecasting project timeline and cost slippage 6 to 12 months in advance across solar, thermal, wind, and transmission corridors (Cost R²: 0.749, Timeline R²: 0.855, Timeline MAE: 2.83 Mo, Cost MAE: 3.03 percentage points)."
   },
   {
-    bg: "/static/assets/slide_solar_wind.jpg",
+    bg: "/static/assets/slide_solar_wind.webp",
     title: `5-Agent <span class="cursive-gold">Decision-Support</span> Pipeline for <br><span class="cursive-gold cursive-large">6,000 Synthetic Projects</span> Across 36 <br><span class="npp-sector-bold">States & UTs</span>`,
     sub: "5 specialized co-pilot agents cross-referencing statutory references, heuristic risk formulas, and XGBoost models across synthetic training projects."
   },
   {
-    bg: "/static/assets/slide_hydro_dam.jpg",
+    bg: "/static/assets/slide_hydro_dam.webp",
     title: `Preempting <span class="cursive-gold">Capital Overruns</span> & Chronic <br><span class="cursive-gold cursive-large">18-24 Months</span> Execution <br><span class="npp-sector-bold">Bottlenecks</span>`,
     sub: "Mathematical threat formulation isolating 6 critical dimensions: Land, Environmental, Contractor Track Record, Weather, Supply Chain, and Financing across hydro and mega grid corridors."
   }
@@ -832,6 +834,69 @@ function showView(viewId, updateHash = true) {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+// Render Free Tier Cold-Start Management & Guest Demo Mode
+let coldStartTimer = null;
+function showColdStartNotice() {
+  let notice = document.getElementById("render-cold-start-banner");
+  if (!notice) {
+    notice = document.createElement("div");
+    notice.id = "render-cold-start-banner";
+    notice.style.cssText = "position: fixed; bottom: 24px; right: 24px; z-index: 99999; background: rgba(15, 23, 42, 0.95); border: 1px solid #f59e0b; color: #fff; padding: 14px 20px; border-radius: 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); font-size: 0.88rem; max-width: 380px; display: flex; align-items: center; gap: 12px; backdrop-filter: blur(8px); animation: fadeIn 0.3s ease-in-out;";
+    notice.innerHTML = `
+      <i class="fa-solid fa-hourglass-half fa-spin text-amber" style="font-size: 1.4rem;"></i>
+      <div>
+        <strong style="color: #f59e0b; display: block; margin-bottom: 2px;">Server Waking Up (~30s)</strong>
+        <span style="color: #94a3b8; font-size: 0.8rem; line-height: 1.3; display: block;">Hosted on Render free tier. Free instance spins down when inactive and takes ~30 seconds to wake up. Please wait...</span>
+      </div>
+    `;
+    document.body.appendChild(notice);
+  }
+}
+
+function hideColdStartNotice() {
+  const notice = document.getElementById("render-cold-start-banner");
+  if (notice) {
+    notice.innerHTML = `
+      <i class="fa-solid fa-circle-check text-success" style="font-size: 1.4rem;"></i>
+      <div>
+        <strong style="color: #10b981; display: block; margin-bottom: 2px;">Server Connected!</strong>
+        <span style="color: #94a3b8; font-size: 0.8rem; display: block;">PowerPredict AI API is online and responsive.</span>
+      </div>
+    `;
+    setTimeout(() => {
+      const el = document.getElementById("render-cold-start-banner");
+      if (el) el.remove();
+    }, 2500);
+  }
+}
+
+async function apiFetch(url, options = {}) {
+  const timer = setTimeout(showColdStartNotice, 2200);
+  try {
+    const res = await fetch(url, options);
+    clearTimeout(timer);
+    hideColdStartNotice();
+    return res;
+  } catch (err) {
+    clearTimeout(timer);
+    throw err;
+  }
+}
+
+window.launchGuestDemo = function() {
+  currentUser = {
+    name: "Guest Evaluator",
+    email: "guest@powerpredict.ai",
+    role: "Project Director",
+    level: "Guest Evaluator Access",
+    org: "PowerPredict Reviewer"
+  };
+  localStorage.setItem("powerpredict_user", JSON.stringify(currentUser));
+  applyUserSession(currentUser);
+  showView("view-dashboard");
+  runAnalysisPipeline();
+};
+
 function switchToLogin() {
   showView("view-login");
 }
@@ -1108,7 +1173,7 @@ function applyUserSession(user) {
 // Load Metadata from API (36 States, 19 Project Types)
 async function loadMetadata() {
   try {
-    const res = await fetch("/api/metadata");
+    const res = await apiFetch("/api/metadata");
     if (!res.ok) return;
     metadata = await res.json();
 
@@ -1393,7 +1458,7 @@ async function runAnalysisPipeline() {
   runBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Executing...';
 
   try {
-    const res = await fetch("/api/predict", {
+    const res = await apiFetch("/api/predict", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)
@@ -3230,7 +3295,7 @@ function startVideoPlayback() {
     const currentChapter = VIDEO_CHAPTERS.find(c => c.id === currentVideoChapterId) || VIDEO_CHAPTERS[0];
     if (isVoiceEnabled) speakHindiVoice(currentChapter.ccHi);
   } else {
-    // In English, play full_walkthrough.wav audio track
+    // In English, play full_walkthrough.mp3 audio track
     if (audio) {
       audio.muted = !isVoiceEnabled;
       const playPromise = audio.play();

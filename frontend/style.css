@@ -606,7 +606,7 @@ body.light-theme .btn-ghost {
 .npp-hero-banner {
   min-height: 560px;
   position: relative;
-  background: url('/static/assets/npp_hero_bg.jpg') center center / cover no-repeat;
+  background: url('/static/assets/npp_hero_bg.webp') center center / cover no-repeat;
   display: flex;
   align-items: center;
   overflow: hidden;

@@ -27,11 +27,11 @@
 
 | National Grid Telemetry | Regional Project Risk Radar |
 | :---: | :---: |
-| ![National Telemetry](frontend/assets/dash_realtime.jpg) | ![Project Threat Radar](frontend/assets/dash_generation.jpg) |
+| ![National Telemetry](frontend/assets/dash_realtime.webp) | ![Project Threat Radar](frontend/assets/dash_generation.webp) |
 
 | Interstate Transmission Corridors | Generation Capacity Tracker |
 | :---: | :---: |
-| ![Transmission Grid](frontend/assets/dash_transmission.jpg) | ![Installed Capacity](frontend/assets/dash_installed.jpg) |
+| ![Transmission Grid](frontend/assets/dash_transmission.webp) | ![Installed Capacity](frontend/assets/dash_installed.webp) |
 
 ---
 
