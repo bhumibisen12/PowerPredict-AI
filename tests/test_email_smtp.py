@@ -4,7 +4,9 @@ from email.message import EmailMessage
 from pathlib import Path
 
 # Load .env if present
-env_path = Path(__file__).resolve().parent / ".env"
+env_path = Path(__file__).resolve().parent.parent / ".env"
+if not env_path.exists():
+    env_path = Path(__file__).resolve().parent / ".env"
 if env_path.exists():
     with open(env_path, "r", encoding="utf-8") as f:
         for line in f:
