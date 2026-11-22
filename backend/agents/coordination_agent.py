@@ -87,14 +87,14 @@ class StakeholderCoordinationAgent:
             dispatches.append({
                 "recipient": f"District Collector & Magistrate, {district}",
                 "organization": f"Revenue Department, Government of {state}",
-                "channel": "Automated Notification System",
+                "channel": "Automated Notification System (Simulated)",
                 "subject": f"Priority Intervention: Land Acquisition Review for Project {proj_id}",
                 "message": (
                     f"Notice: Project {proj_name} ({district}) faces potential 12-18 months title dispute delay (Risk Score: {land_risk:.2f}). "
                     f"Recommended single-window demarcation and statutory incentive framework review."
                 ),
                 "timestamp": now_str,
-                "status": "DISPATCHED (Ref: DISP-2026/PP-994)"
+                "status": "DISPATCHED (Simulated Ref: DISP-2026/PP-994)"
             })
             logs.append(f"[{self.name}] Dispatched statutory priority memo to District Collector ({district}).")
 
@@ -104,14 +104,14 @@ class StakeholderCoordinationAgent:
             dispatches.append({
                 "recipient": f"Managing Director & Member (Grid), {state} State Electricity Board",
                 "organization": f"State Power Transmission Corporation Ltd ({state})",
-                "channel": "Official Secure Portal Memo",
+                "channel": "Internal Project Memo (Simulated)",
                 "subject": f"⚡ CRITICAL ESCALATION: 10+ Months Slippage Predicted for {proj_name}",
                 "message": (
                     f"Statutory Notice: Project {proj_name} Delay Risk Score has reached {score:.2f} (CRITICAL). "
                     f"Secretary (Power) review meeting requested to address bay allocation, Right of Way (RoW) disputes, and PPA tariff adoption."
                 ),
                 "timestamp": now_str,
-                "status": "ESCALATED"
+                "status": "ESCALATED (Simulated)"
             })
             logs.append(f"[{self.name}] Escalated critical dossier to State Electricity Board Board of Directors.")
 
@@ -120,15 +120,15 @@ class StakeholderCoordinationAgent:
             alerts_sent_flags["ministry_of_power"] = True
             dispatches.append({
                 "recipient": "Executive Project Steering Committee & Apex Infrastructure Review Cell",
-                "organization": "Central Project Governance Grid",
-                "channel": "Executive Telemetry Alert System",
+                "organization": "Apex Infrastructure Steering Committee",
+                "channel": "Executive Telemetry Alert (Simulated)",
                 "subject": f"🚨 HIGH-LEVEL ALERT: Imminent Project Schedule Failure Risk - {proj_id}",
                 "message": (
                     f"High-Level Alert: Project {proj_name} ({state}) shows extreme delay risk {score:.2f} exceeding critical thresholds. "
                     f"Severe cost overrun (>40%) and grid stability shortfall projected. Recommending executive intervention."
                 ),
                 "timestamp": now_str,
-                "status": "ESCALATED TO EXECUTIVE COMMITTEE"
+                "status": "ESCALATED TO EXECUTIVE COMMITTEE (Simulated)"
             })
             logs.append(f"[{self.name}] Emergency executive escalation dispatched.")
 

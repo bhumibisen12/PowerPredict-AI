@@ -17,11 +17,11 @@ let metadata = null;
 const I18N = {
   en: {
     // Header & NPP Government Portal
-    header_badge: "CENTRAL ELECTRICITY AUTHORITY • DECISION SUPPORT",
+    header_badge: "POWER INFRASTRUCTURE • DECISION SUPPORT",
     top_help: "Help",
     lbl_select_lang: "Select Language",
     skip_to_main: "Skip to main content",
-    pushp_tag: "Prototype • Synthetic data • Not a government site",
+    disclaimer_tag: "Prototype • Synthetic data • Not a government site",
     disclaimer_pill: "Prototype • Synthetic data • Not a government site",
     npp_sub_tag: "AI-Powered Capital Project Delay & Cost Overrun Forecasting",
     menu_home: "HOME",
@@ -71,7 +71,7 @@ const I18N = {
     hero_headline: "Predict Power Project Delays Before They Happen",
     hero_subheadline: "Dual-model XGBoost regression engine forecasting project timeline and cost slippage 6 to 12 months in advance across solar, thermal, wind, and transmission corridors (Cost R²: 0.749, Timeline R²: 0.855, Timeline MAE: 2.83 Mo, Cost MAE: 3.03 p.p.).",
     hero_cta_primary: "Explore Prediction Platform",
-    hero_cta_secondary: "Enterprise Login",
+    hero_cta_secondary: "Role-Based Login",
     h_stat_1: "Projects Delayed (18-24 Mo Avg)",
     h_stat_2: "Annual Cost Overrun Burden",
     h_stat_3: "Predictive Model Accuracy",
@@ -104,28 +104,28 @@ const I18N = {
     // Demo Section
     demo_eyebrow: "INTERACTIVE PREDICTION WORKBENCH",
     demo_title: "Experience the Platform Live",
-    demo_desc: "Access our enterprise command center to simulate capital projects across all 36 Indian States and 19 power sectors. Adjust ground vulnerability sliders, review explainable AI attributions, and generate tamper-proof audit records.",
-    btn_launch_studio: "Open Interactive Command Center",
+    demo_desc: "Access our decision-support workbench to simulate capital projects across all 36 Indian States and 19 power sectors. Adjust ground vulnerability sliders, review explainable AI attributions, and generate tamper-proof audit records.",
+    btn_launch_studio: "Open Interactive Workbench",
 
     // ROI Section
     roi_eyebrow: "CAPITAL VALUE PROPOSITION",
-    roi_title: "180x Return on Investment (18,000% ROI)",
-    roi_desc: "How proactive predictive decision support transforms public utility balance sheets and avoids catastrophic capital lockup.",
-    roi_invest_title: "Enterprise Platform Outlay",
-    roi_invest_desc: "Annual deployment encompassing multi-project predictive monitoring, continuous satellite GIS telemetry, and automated agency escalation pipelines.",
+    roi_title: "Illustrative Capital Preservation Value",
+    roi_desc: "How proactive predictive decision support models risk vectors and formulates early mitigation playbooks.",
+    roi_invest_title: "Decision-Support Platform Scope",
+    roi_invest_desc: "Analytical deployment encompassing multi-project predictive monitoring, geospatial risk baselines, and automated escalation pipelines.",
     roi_savings_title: "Direct Capital Preserved",
     roi_savings_desc: "Averted interest during construction (IDC), contractor idle claims, liquidated damages disputes, and expedited commercial revenue realization.",
 
     // Pricing Section
-    pricing_eyebrow: "ENTERPRISE DEPLOYMENT TIERS",
-    pricing_title: "Transparent Infrastructure Tiers",
-    pricing_desc: "Engineered for state electricity boards, independent power producers (IPPs), and central transmission utilities.",
+    pricing_eyebrow: "DEPLOYMENT & EVALUATION TIERS",
+    pricing_title: "Transparent Implementation Tiers",
+    pricing_desc: "Accessible prototypes for academic research, benchmark evaluation, and pilot testing.",
 
     // Footer
-    footer_desc: "National decision support platform aligning machine learning, regulatory RAG retrieval, and multi-agent governance for power infrastructure across India.",
+    footer_desc: "Decision support research prototype combining machine learning, regulatory retrieval, and a 5-agent pipeline for power infrastructure across India.",
 
     // Login Portal
-    login_subtitle: "Enterprise Infrastructure Decision Support Portal",
+    login_subtitle: "Decision Support & Pilot Access Portal",
     lbl_select_role: "Select Operational Role:",
     lbl_email: "Email / Username",
     lbl_password: "Password",
@@ -188,8 +188,8 @@ const I18N = {
     timeline_stepper_title: "Milestone Slippage Projection (6-12 Months Early Warning)",
     lbl_predictive_vs_sched: "Predictive vs Scheduled",
     agents_hero_eyebrow: "MULTI-AGENT COORDINATION",
-    agents_hero_title: "5 Specialized Autonomous Agents",
-    agents_hero_desc: "Specialized machine learning, time-series forecasting, risk scoring, and RAG knowledge synthesis agents orchestrating predictive governance.",
+    agents_hero_title: "5 Specialized Decision-Support Agents",
+    agents_hero_desc: "Specialized machine learning, risk scoring, and statutory retrieval agents collaborating in a decision-support pipeline.",
     lbl_latency: "Pipeline Latency",
     lbl_agents_ready: "Agents Active",
     terminal_title: "Agent Inter-Communication & Execution Log",
@@ -233,11 +233,11 @@ const I18N = {
   },
   hi: {
     // Header & NPP Government Portal
-    header_badge: "केंद्रीय विद्युत प्राधिकरण • निर्णय समर्थन प्रणाली",
+    header_badge: "विद्युत अवसंरचना • निर्णय समर्थन प्रणाली",
     top_help: "सहायता",
     lbl_select_lang: "भाषा चुनें",
     skip_to_main: "मुख्य सामग्री पर जाएं",
-    pushp_tag: "प्रोटोटाइप • सिंथेटिक डेटा • कोई सरकारी साइट नहीं",
+    disclaimer_tag: "प्रोटोटाइप • सिंथेटिक डेटा • कोई सरकारी साइट नहीं",
     disclaimer_pill: "प्रोटोटाइप • सिंथेटिक डेटा • कोई सरकारी साइट नहीं",
     npp_sub_tag: "AI-संचालित पूंजीगत परियोजना विलंब एवं लागत वृद्धि पूर्वानुमान",
     menu_home: "होम",
@@ -287,7 +287,7 @@ const I18N = {
     hero_headline: "विद्युत परियोजनाओं के विलंब को शुरू होने से पहले रोकें",
     hero_subheadline: "डुअल XGBoost रिग्रेशन इंजन द्वारा सौर, ताप, पवन और ट्रांसमिशन परियोजनाओं में 6 से 12 महीने पहले समय और लागत वृद्धि का पूर्वानुमान (लागत R²: 0.749, समय R²: 0.855, समय MAE: 2.83 माह, लागत MAE: 3.03 p.p.)।",
     hero_cta_primary: "पूर्वानुमान प्लेटफ़ॉर्म देखें",
-    hero_cta_secondary: "एंटरप्राइज़ लॉगिन",
+    hero_cta_secondary: "रोल-आधारित लॉगिन",
     h_stat_1: "परियोजनाएं विलंबित (औसत 18-24 माह)",
     h_stat_2: "वार्षिक अतिरिक्त लागत बोझ",
     h_stat_3: "AI मॉडल सटीकता दर",
@@ -404,8 +404,8 @@ const I18N = {
     timeline_stepper_title: "माइलस्टोन विलंब प्रक्षेपण (6-12 महीने पूर्व चेतावनी)",
     lbl_predictive_vs_sched: "पूर्वानुमान बनाम निर्धारित",
     agents_hero_eyebrow: "मल्टी-एजेंट समन्वय प्रणाली",
-    agents_hero_title: "5 स्वायत्त विशिष्ट एजेंट",
-    agents_hero_desc: "मशीन लर्निंग, टाइम-सीरीज पूर्वानुमान, जोखिम गणना और RAG ज्ञान संश्लेषण एजेंट स्वायत्त रूप से निर्णय समर्थन प्रदान करते हैं।",
+    agents_hero_title: "5 विशिष्ट निर्णय-समर्थन एजेंट",
+    agents_hero_desc: "मशीन लर्निंग, जोखिम गणना और TF-IDF ज्ञान खोज एजेंट मिलकर निर्णय समर्थन प्रदान करते हैं।",
     lbl_latency: "सिस्टम निष्पादन समय",
     lbl_agents_ready: "सक्रिय एजेंट",
     terminal_title: "एजेंट संचार एवं निष्पादन लॉग",
@@ -2981,7 +2981,7 @@ function generatePdfBlob(title, docType, rows, extraMeta = {}) {
   });
   
   streamLines.push('0.8 0.85 0.9 RG 0.8 w 36 60 540 0.1 re S');
-  streamLines.push('BT /F1 7.5 Tf 0.4 0.45 0.5 rg 48 48 Td (Autonomously compiled by PowerPredict AI  |  National Infrastructure Decision Grid) Tj ET');
+  streamLines.push('BT /F1 7.5 Tf 0.4 0.45 0.5 rg 48 48 Td (Compiled by PowerPredict AI  |  Decision-Support Prototype) Tj ET');
   streamLines.push('BT /F2 7.5 Tf 0.2 0.3 0.4 rg 48 37 Td (Statutory Record - Validated against 6,000 Historical Capital Projects across 36 States/UTs) Tj ET');
   streamLines.push('BT /F1 7.5 Tf 0.4 0.45 0.5 rg 470 37 Td (Page 1 of 1 | Verified PDF) Tj ET');
   

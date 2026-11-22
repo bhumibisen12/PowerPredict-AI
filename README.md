@@ -51,7 +51,7 @@ Key contributing factors include:
 
 ## 🏛️ 2. Architectural Framework & 5-Agent Orchestration
 
-The platform coordinates five specialized autonomous agents through a central asynchronous orchestrator bus:
+The platform coordinates five specialized decision-support agents through a central asynchronous orchestrator bus:
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐

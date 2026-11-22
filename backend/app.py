@@ -1,6 +1,6 @@
 """
 PowerPredict AI - FastAPI Application Server
-Integrates Multi-Factor ML Models & Autonomous Agents with REST APIs and Web Hosting.
+Integrates Multi-Factor ML Models & 5-Agent Pipeline with REST APIs and Web Hosting.
 """
 
 import os

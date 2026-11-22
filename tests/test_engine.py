@@ -1,6 +1,6 @@
 """
 PowerPredict AI - Comprehensive Test Suite
-Validates all 4 Pillars, 5 Autonomous Agents, Threat Scoring Formula, RAG, and Evidence Bundling.
+Validates all 4 Pillars, 5 Decision-Support Agents, Threat Scoring Formula, RAG, and Evidence Bundling.
 """
 
 import pytest

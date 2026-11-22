@@ -1,11 +1,11 @@
 """
 PowerPredict AI - Multi-Agent Orchestrator
-Coordinates 5 autonomous specialized agents:
+Coordinates 5 specialized decision-support agents:
 - Agent 1: Cost Prediction Agent (XGBoost Regressor)
 - Agent 2: Timeline Prediction Agent (Time-Series & Temporal Model)
 - Agent 3: Delay Hotspot Agent (Multi-Factor Delay Threat Scoring)
 - Agent 4: RAG Recommendation Agent (NLP & Vector Knowledge Retrieval)
-- Agent 5: Stakeholder Coordination Agent (Autonomous Multi-Channel Escalation)
+- Agent 5: Stakeholder Coordination Agent (Multi-Channel Escalation)
 """
 
 import time
