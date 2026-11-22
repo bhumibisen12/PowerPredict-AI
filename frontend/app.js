@@ -847,29 +847,29 @@ function setupAuth() {
     "Project Director": {
       email: "director@powerpredict.ai",
       pass: "Director@2026",
-      name: "Er. Rajesh Sharma",
-      level: "Level-1 Executive",
-      scope: "Full portfolio governance across 36 States, AI risk sensitivity overrides, and cryptographic dossier signing."
+      name: "Bhumi Bisen",
+      level: "Lead Researcher & Project Director",
+      scope: "Full portfolio simulation, AI risk sensitivity overrides, and cryptographic dossier verification."
     },
     "State Power Board": {
       email: "board.discom@powerpredict.ai",
       pass: "Discom@2026",
-      name: "Smt. Ananya Sen",
-      level: "State Regulatory Authority",
-      scope: "State-wide transmission evacuation approvals, distribution tariff risk tracking, and environmental NOC escalation."
+      name: "State Grid Lead",
+      level: "State Utility Lead (Demo)",
+      scope: "State-wide transmission evacuation review, tariff variance tracking, and environmental clearance monitoring."
     },
     "Lead EPC Contractor": {
       email: "epc.lead@powerpredict.ai",
       pass: "Contractor@2026",
-      name: "Vikramaditya Rao",
-      level: "Tier-1 EPC Lead",
+      name: "EPC Project Manager",
+      level: "EPC Contractor (Demo)",
       scope: "Milestone execution telemetry, civil & electrical critical path tracking, and material supply chain buffers."
     },
     "Regulatory Auditor": {
       email: "auditor.cea@powerpredict.ai",
       pass: "Auditor@2026",
-      name: "Dr. K. S. Murthy",
-      level: "Statutory CEA/CERC Oversight",
+      name: "Compliance Auditor",
+      level: "Statutory Auditor (Demo)",
       scope: "Statutory compliance audits, SHA-256 evidence verification, and CERC benchmark variance analysis."
     }
   };
@@ -1100,7 +1100,7 @@ function applyUserSession(user) {
   const profileChip = document.getElementById("user-profile-chip");
   if (profileChip) {
     profileChip.classList.remove("d-none");
-    document.getElementById("logged-user-name").textContent = user.name || "Er. Rajesh Sharma";
+    document.getElementById("logged-user-name").textContent = user.name || "Bhumi Bisen";
     document.getElementById("logged-user-role").textContent = user.role || "Project Director";
   }
 }
