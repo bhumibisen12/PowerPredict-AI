@@ -119,5 +119,18 @@ def test_multi_agent_pipeline_and_evidence_bundle():
     assert bundle["alerts_sent"]["project_manager"] is True
     assert bundle["alerts_sent"]["contractor"] is True
 
+def test_cea_real_benchmarks_availability():
+    """Validates the curated real-world CEA capital power project benchmark dataset."""
+    import json
+    from backend.config import BASE_DIR
+    p = BASE_DIR / "sample_data" / "cea_real_benchmarks.json"
+    assert p.exists()
+    with open(p, "r", encoding="utf-8") as f:
+        benchmarks = json.load(f)
+    assert len(benchmarks) >= 10
+    assert any("Subansiri" in b["project_name"] for b in benchmarks)
+    assert any("Barh" in b["project_name"] for b in benchmarks)
+    assert any("Bhadla" in b["project_name"] for b in benchmarks)
+
 if __name__ == "__main__":
     pytest.main(["-v", __file__])

@@ -1,0 +1,231 @@
+[
+  {
+    "id": "CEA-REAL-001",
+    "project_name": "Subansiri Lower Hydroelectric Project (NHPC)",
+    "technology": "Hydroelectric - Large Dam & Run-of-River",
+    "state": "Arunachal Pradesh / Assam Border",
+    "capacity_mw": 2000,
+    "sanctioned_cost_cr": 6285.3,
+    "revised_cost_cr": 21247.0,
+    "cost_overrun_pct": 238.0,
+    "sanctioned_timeline_months": 60,
+    "actual_timeline_months": 228,
+    "delay_months": 168,
+    "primary_documented_causes": [
+      "Submergence agitation & local protests in downstream Assam",
+      "National Green Tribunal (NGT) expert committee safety reassessment",
+      "Brahmaputra river basin monsoon inundations & landslide damage"
+    ],
+    "statutory_source": "CEA Broad Status Report & Lok Sabha Parliamentary Standing Committee on Energy"
+  },
+  {
+    "id": "CEA-REAL-002",
+    "project_name": "Barh Super Thermal Power Station Stage-I & II (NTPC)",
+    "technology": "Thermal - Supercritical Coal",
+    "state": "Bihar",
+    "capacity_mw": 3300,
+    "sanctioned_cost_cr": 8693.0,
+    "revised_cost_cr": 21399.0,
+    "cost_overrun_pct": 146.2,
+    "sanctioned_timeline_months": 48,
+    "actual_timeline_months": 180,
+    "delay_months": 132,
+    "primary_documented_causes": [
+      "Russian boiler supplier (Technopromexport) contractual collapse & termination",
+      "Severe civil mobilization delays and contractual re-tendering",
+      "Ash pond land acquisition disputes with local landholders"
+    ],
+    "statutory_source": "Central Electricity Authority (CEA) Monthly Monitoring Review"
+  },
+  {
+    "id": "CEA-REAL-003",
+    "project_name": "Bhadla Solar Park (Phase-I to IV)",
+    "technology": "Solar Photovoltaic (Ground-Mounted)",
+    "state": "Rajasthan",
+    "capacity_mw": 2245,
+    "sanctioned_cost_cr": 9850.0,
+    "revised_cost_cr": 10400.0,
+    "cost_overrun_pct": 5.6,
+    "sanctioned_timeline_months": 24,
+    "actual_timeline_months": 34,
+    "delay_months": 10,
+    "primary_documented_causes": [
+      "Great Indian Bustard (GIB) priority habitat transmission line litigation",
+      "Extreme Thar desert summer heatwaves hindering daytime module mounting",
+      "Substation transformer evacuation capacity constraints"
+    ],
+    "statutory_source": "Ministry of New and Renewable Energy (MNRE) & CEA State Reports"
+  },
+  {
+    "id": "CEA-REAL-004",
+    "project_name": "Pavagada Solar Park (Shakti Sthala)",
+    "technology": "Solar Photovoltaic (Ground-Mounted)",
+    "state": "Karnataka",
+    "capacity_mw": 2050,
+    "sanctioned_cost_cr": 14800.0,
+    "revised_cost_cr": 16300.0,
+    "cost_overrun_pct": 10.1,
+    "sanctioned_timeline_months": 24,
+    "actual_timeline_months": 38,
+    "delay_months": 14,
+    "primary_documented_causes": [
+      "Complex 28-year land lease framework with 2,300+ local farming families",
+      "Interstate 400/220kV pooling station grid synchronization lags",
+      "Right-of-Way (RoW) clearances for double-circuit transmission line towers"
+    ],
+    "statutory_source": "KREDL (Karnataka Renewable Energy Dev Ltd) & CERC Tariff Filings"
+  },
+  {
+    "id": "CEA-REAL-005",
+    "project_name": "Tapovan Vishnugad Hydroelectric Project (NTPC)",
+    "technology": "Hydroelectric - Large Dam & Run-of-River",
+    "state": "Uttarakhand",
+    "capacity_mw": 520,
+    "sanctioned_cost_cr": 2978.0,
+    "revised_cost_cr": 5769.0,
+    "cost_overrun_pct": 93.7,
+    "sanctioned_timeline_months": 60,
+    "actual_timeline_months": 204,
+    "delay_months": 144,
+    "primary_documented_causes": [
+      "Catastrophic flash floods (June 2013 Kedarnath & Feb 2021 Rishiganga disaster)",
+      "Head Race Tunnel (HRT) Tunnel Boring Machine (TBM) water ingress and jamming",
+      "Extreme Himalayan fragile thrust zone geological surprises"
+    ],
+    "statutory_source": "CEA Broad Status Report of Hydro Electric Projects"
+  },
+  {
+    "id": "CEA-REAL-006",
+    "project_name": "Rewa Ultra Mega Solar Park (RUMSL)",
+    "technology": "Solar Photovoltaic (Ground-Mounted)",
+    "state": "Madhya Pradesh",
+    "capacity_mw": 750,
+    "sanctioned_cost_cr": 4500.0,
+    "revised_cost_cr": 4680.0,
+    "cost_overrun_pct": 4.0,
+    "sanctioned_timeline_months": 18,
+    "actual_timeline_months": 23,
+    "delay_months": 5,
+    "primary_documented_causes": [
+      "Model national execution with minimal variance",
+      "Minor inter-regional transmission synchronization with Delhi Metro (DMRC)",
+      "Monsoon drainage canal reconfiguration across rocky terrain"
+    ],
+    "statutory_source": "World Bank / MNRE Best Practice Project Dossier"
+  },
+  {
+    "id": "CEA-REAL-007",
+    "project_name": "Kudankulam Nuclear Power Plant Units 1 & 2 (NPCIL)",
+    "technology": "Nuclear - Pressurized Heavy Water / VVER",
+    "state": "Tamil Nadu",
+    "capacity_mw": 2000,
+    "sanctioned_cost_cr": 13171.0,
+    "revised_cost_cr": 17270.0,
+    "cost_overrun_pct": 31.1,
+    "sanctioned_timeline_months": 72,
+    "actual_timeline_months": 156,
+    "delay_months": 84,
+    "primary_documented_causes": [
+      "Local coastal public protests and legal petitions post-Fukushima",
+      "Atomic Energy Regulatory Board (AERB) mandatory post-Fukushima retrofits",
+      "Specialized heavy equipment maritime cargo transit delays from St. Petersburg"
+    ],
+    "statutory_source": "Department of Atomic Energy (DAE) Annual Performance Report"
+  },
+  {
+    "id": "CEA-REAL-008",
+    "project_name": "Teesta-VI Hydroelectric Project (NHPC / Lanco)",
+    "technology": "Hydroelectric - Large Dam & Run-of-River",
+    "state": "Sikkim",
+    "capacity_mw": 500,
+    "sanctioned_cost_cr": 2985.0,
+    "revised_cost_cr": 5748.0,
+    "cost_overrun_pct": 92.5,
+    "sanctioned_timeline_months": 54,
+    "actual_timeline_months": 180,
+    "delay_months": 126,
+    "primary_documented_causes": [
+      "Original private developer (Lanco Teesta Hydro Power) insolvency / NCLT proceedings",
+      "NHPC takeover following Cabinet Committee on Economic Affairs (CCEA) approval",
+      "Severe cloudburst floods damaging dam diversion tunnels"
+    ],
+    "statutory_source": "NCLT Corporate Insolvency Resolution Process & CEA Review"
+  },
+  {
+    "id": "CEA-REAL-009",
+    "project_name": "Khavda Hybrid Renewable Energy Park (Phase-I)",
+    "technology": "Hybrid (Solar + Wind Utility Park)",
+    "state": "Gujarat",
+    "capacity_mw": 3000,
+    "sanctioned_cost_cr": 15000.0,
+    "revised_cost_cr": 15900.0,
+    "cost_overrun_pct": 6.0,
+    "sanctioned_timeline_months": 24,
+    "actual_timeline_months": 32,
+    "delay_months": 8,
+    "primary_documented_causes": [
+      "Rann of Kutch marshy soil geotechnical foundation stabilizing requirements",
+      "Defense and international border security clearance protocols",
+      "Supply chain lead-times for 5.2 MW ultra-large onshore wind turbines"
+    ],
+    "statutory_source": "Gujarat Urja Vikas Nigam Ltd (GUVNL) & CEA Renewable Gazette"
+  },
+  {
+    "id": "CEA-REAL-010",
+    "project_name": "North Karanpura Super Thermal Power Project (NTPC)",
+    "technology": "Thermal - Supercritical Coal",
+    "state": "Jharkhand",
+    "capacity_mw": 1980,
+    "sanctioned_cost_cr": 7111.0,
+    "revised_cost_cr": 14366.0,
+    "cost_overrun_pct": 102.0,
+    "sanctioned_timeline_months": 48,
+    "actual_timeline_months": 248,
+    "delay_months": 200,
+    "primary_documented_causes": [
+      "Prolonged dispute between Ministry of Coal and MoP over pit-head coal blocks",
+      "Forest clearance and compensatory afforestation land handover lags",
+      "Air-Cooled Condenser (ACC) technological retrofit to prevent water depletion"
+    ],
+    "statutory_source": "Lok Sabha Committee on Public Undertakings (COPU) Reports"
+  },
+  {
+    "id": "CEA-REAL-011",
+    "project_name": "Bikaner-II Inter-State Transmission Corridor (POWERGRID)",
+    "technology": "Inter-Regional Green Energy Transmission Corridor",
+    "state": "Rajasthan",
+    "capacity_mw": 2500,
+    "sanctioned_cost_cr": 2800.0,
+    "revised_cost_cr": 3050.0,
+    "cost_overrun_pct": 8.9,
+    "sanctioned_timeline_months": 24,
+    "actual_timeline_months": 35,
+    "delay_months": 11,
+    "primary_documented_causes": [
+      "Supreme Court order mandating bird flight diverters on high-voltage lines",
+      "Agricultural RoW compensation demands in Bikaner and Sikar districts",
+      "Supply lead-time bottlenecks for 765 kV GIS transformer bays"
+    ],
+    "statutory_source": "Central Electricity Regulatory Commission (CERC) Transmission Orders"
+  },
+  {
+    "id": "CEA-REAL-012",
+    "project_name": "Polavaram Hydroelectric Power Project",
+    "technology": "Hydroelectric - Large Dam & Run-of-River",
+    "state": "Andhra Pradesh",
+    "capacity_mw": 960,
+    "sanctioned_cost_cr": 3010.0,
+    "revised_cost_cr": 5400.0,
+    "cost_overrun_pct": 79.4,
+    "sanctioned_timeline_months": 48,
+    "actual_timeline_months": 128,
+    "delay_months": 80,
+    "primary_documented_causes": [
+      "Godavari river historic flood inundation damaging diaphragm wall",
+      "Interstate river disputes and rehabilitation & resettlement (R&R) packages",
+      "EPC contractor change and retendering by state water resource department"
+    ],
+    "statutory_source": "Polavaram Project Authority (PPA) / CEA Technical Review"
+  }
+]
+

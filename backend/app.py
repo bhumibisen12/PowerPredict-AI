@@ -273,6 +273,17 @@ def get_kb(query: Optional[str] = None):
         docs = rag_engine.documents
     return {"documents": docs, "total": len(docs)}
 
+@app.get("/api/real-benchmarks")
+def get_real_benchmarks():
+    """Returns curated real-world Indian power mega-projects documented in CEA broad status reports."""
+    benchmark_file = BASE_DIR / "sample_data" / "cea_real_benchmarks.json"
+    if benchmark_file.exists():
+        import json
+        with open(benchmark_file, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            return {"projects": data, "total_projects": len(data)}
+    return {"projects": [], "total_projects": 0}
+
 FRONTEND_DIR = BASE_DIR / "frontend"
 if FRONTEND_DIR.exists():
     app.mount("/static", StaticFiles(directory=str(FRONTEND_DIR)), name="static")
