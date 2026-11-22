@@ -255,8 +255,8 @@ Embedded directly into the **"How It Works"** page, an HTML5 Canvas player illus
 - **Scene 1 (0:00 - 0:28):** Project DPR Data Ingestion (capacity in MW, state profile, baseline budget & timeline).
 - **Scene 2 (0:28 - 0:58):** Dual XGBoost ML Inference (Cost overrun % and timeline slippage in months; Cost R²: 0.749, Timeline R²: 0.855, Average R²: 0.802, Timeline MAE: 2.83 Months, Cost MAE: 3.03 p.p.).
 - **Scene 3 (0:58 - 1:26):** 6-Factor Delay Risk Scoring ($D = 0.63$, highlighting Land and Contractor risk factors).
-- **Scene 4 (1:26 - 1:52):** Semantic RAG Retrieval: Statutory mitigation recommendations retrieved from indexed CEA circulars and environmental guidelines.
-- **Scene 5 (1:52 - 2:15):** Stakeholder Alert Dispatch & PDF Export.
+- **Scene 4 (1:26 - 1:52):** TF-IDF Regulatory Retrieval: Statutory mitigation recommendations retrieved via TF-IDF over 6 curated authority frameworks (illustrative estimates).
+- **Scene 5 (1:52 - 2:15):** Stakeholder Escalation (Active Email, Simulated SMS/WhatsApp) & PDF Export.
 - **Controls:** Chapter jump rail, interactive scrubber bar, closed captions, and bilingual audio narration toggle.
 
 ### Client-Side PDF Export (PDF 1.4)

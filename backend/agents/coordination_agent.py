@@ -1,8 +1,8 @@
 """
-Agent 5: Stakeholder Coordination Agent (Autonomous Multi-Channel Dispatch)
-Responsible for orchestrating automated hierarchical escalations and communications
-to responsible authorities (Project Manager, Contractor, District Collector,
-State Electricity Board, Ministry of Power, NITI Aayog).
+Agent 5: Stakeholder Coordination Agent (Decision-Support Escalation Dispatch)
+Responsible for hierarchical escalation formatting and simulated stakeholder dispatches
+(Project Manager, Contractor, District Collector, State Electricity Board).
+Active delivery supported via SMTP Email; SMS and WhatsApp channels are simulated.
 """
 
 from datetime import datetime
@@ -12,8 +12,8 @@ class StakeholderCoordinationAgent:
     def __init__(self):
         self.name = "Stakeholder Coordination Agent"
         self.agent_id = "agent_05_coordination"
-        self.role = "Autonomous Multi-Agency Orchestration & Hierarchical Escalation"
-        self.channels_supported = ["Secure Email", "Encrypted SMS", "WhatsApp API", "Project Management Notification"]
+        self.role = "Stakeholder Escalation & Notification Formatting (Email Active, SMS/WhatsApp Simulated)"
+        self.channels_supported = ["Secure Email (Active SMTP)", "Encrypted SMS (Simulated)", "WhatsApp API (Simulated)", "Project Management Notification (Simulated)"]
 
     def execute(
         self,
@@ -49,7 +49,7 @@ class StakeholderCoordinationAgent:
             dispatches.append({
                 "recipient": "Chief Project Manager (Solar Park Division)",
                 "organization": f"State Power Development Corp ({state})",
-                "channel": "WhatsApp & Dashboard Push",
+                "channel": "WhatsApp & Dashboard Push (Simulated)",
                 "subject": f"🚨 [PowerPredict Alert] Delay Risk Detected ({score:.2f}) - {proj_name}",
                 "message": (
                     f"PowerPredict AI alert for {proj_name} ({proj_id}). Overall Delay Risk: {score:.2f} ({risk_assessment.get('risk_level')}). "
@@ -57,9 +57,9 @@ class StakeholderCoordinationAgent:
                     f"Pre-emptive action required: Expedite Land Acquisition and Environmental Clearance dossiers. RAG recommendations generated."
                 ),
                 "timestamp": now_str,
-                "status": "DELIVERED"
+                "status": "DELIVERED (SIMULATED)"
             })
-            logs.append(f"[{self.name}] Dispatched WhatsApp & Dashboard notification to Project Manager.")
+            logs.append(f"[{self.name}] Formatted WhatsApp & Dashboard notification to Project Manager (Simulated).")
 
         # 2. Contractor Dispatch (Level 2+)
         if score >= 0.60:
@@ -67,7 +67,7 @@ class StakeholderCoordinationAgent:
             dispatches.append({
                 "recipient": "Lead EPC Project Director (Contractor)",
                 "organization": project_details.get("contractor_tier", "EPC Contractor"),
-                "channel": "SMS & Official Email",
+                "channel": "Official Email (Active) & SMS (Simulated)",
                 "subject": f"⚠️ URGENT: Bi-Weekly Progress Milestone Review & LD Caution - {proj_id}",
                 "message": (
                     f"NOTICE: Project {proj_name} is tracking a predicted delay of "
@@ -78,7 +78,7 @@ class StakeholderCoordinationAgent:
                 "timestamp": now_str,
                 "status": "DELIVERED"
             })
-            logs.append(f"[{self.name}] Dispatched SMS and official legal caution memo to EPC Contractor.")
+            logs.append(f"[{self.name}] Dispatched Email and simulated SMS caution memo to EPC Contractor.")
 
         # 3. District Collector Dispatch (If Land Acquisition is Critical/High)
         land_risk = risk_assessment.get("risk_factors", {}).get("land_acquisition", {}).get("score", 0.0)
@@ -132,7 +132,7 @@ class StakeholderCoordinationAgent:
             })
             logs.append(f"[{self.name}] Emergency executive escalation dispatched.")
 
-        logs.append(f"[{self.name}] Autonomous coordination completed. {len(dispatches)} high-priority stakeholder communications dispatched.")
+        logs.append(f"[{self.name}] Coordination completed. {len(dispatches)} stakeholder communications synthesized/formatted.")
 
         return {
             "agent_id": self.agent_id,

@@ -1,8 +1,7 @@
 """
-Agent 4: RAG Recommendation Agent (NLP + Vector Knowledge Retrieval)
-Responsible for querying 10,000+ past Indian power project reports,
-retrieving statutory precedents (CEA, MoEFCC, CERC), and generating personalized,
-quantified delay and cost mitigation interventions.
+Agent 4: RAG Recommendation Agent (TF-IDF Knowledge Retrieval)
+Responsible for querying 6 curated authority reference frameworks (CEA, MoEFCC, CERC, RFCTLARR),
+retrieving statutory precedents, and generating illustrative delay and cost mitigation interventions.
 """
 
 from typing import Dict, Any
@@ -12,8 +11,8 @@ class RAGRecommendationAgent:
     def __init__(self):
         self.name = "RAG Recommendation Agent"
         self.agent_id = "agent_04_rag"
-        self.role = "Retrieval-Augmented Knowledge Synthesis & Policy Prescriptions"
-        self.retrieval_source = "10,000+ Historical Power Project Reports & Statutory Regulations (CEA, MoP, CERC)"
+        self.role = "Statutory Knowledge Retrieval & Policy Prescriptions (TF-IDF over 6 Curated Frameworks)"
+        self.retrieval_source = "6 Curated Statutory Frameworks (CEA, MoEFCC, CERC, RFCTLARR)"
 
     def execute(
         self,
@@ -22,13 +21,13 @@ class RAGRecommendationAgent:
         risk_assessment: Dict[str, Any]
     ) -> Dict[str, Any]:
         logs = []
-        logs.append(f"[{self.name}] Initiating semantic search across CEA & MoP knowledge repository.")
-        logs.append(f"[{self.name}] Vector retriever querying precedents for hotspots: {', '.join(risk_assessment.get('hotspots', []))}.")
+        logs.append(f"[{self.name}] Initiating TF-IDF retrieval across 6 curated authority reference frameworks.")
+        logs.append(f"[{self.name}] Retriever querying statutory precedents for hotspots: {', '.join(risk_assessment.get('hotspots', []))}.")
         
         recs = rag_engine.generate_recommendations(project_details, predictions, risk_assessment)
         
-        logs.append(f"[{self.name}] Retrieved {len(recs.get('citations', []))} high-confidence statutory case studies.")
-        logs.append(f"[{self.name}] Synthesized {len(recs.get('actions', []))} targeted action items.")
+        logs.append(f"[{self.name}] Retrieved {len(recs.get('citations', []))} statutory reference frameworks.")
+        logs.append(f"[{self.name}] Synthesized {len(recs.get('actions', []))} targeted action items (illustrative estimates).")
         logs.append(f"[{self.name}] Projected impact: {recs['timeline_progression']} | {recs['cost_progression']}.")
         
         return {

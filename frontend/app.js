@@ -91,15 +91,15 @@ const I18N = {
     // Solution Section
     sol_eyebrow: "PREDICTIVE ARCHITECTURE",
     sol_title: "How PowerPredict AI Solves It",
-    sol_desc: "A four-pillar predictive intelligence platform combining supervised machine learning, multi-factor risk attribution, regulatory RAG retrieval, and autonomous multi-agent coordination.",
+    sol_desc: "A four-pillar predictive intelligence platform combining supervised machine learning, multi-factor risk attribution, regulatory retrieval (TF-IDF over 6 frameworks), and a 5-agent decision-support pipeline.",
     pil_1_title: "ML-Based Cost & Timeline Engine",
     pil_1_desc: "Dual XGBoost regression engine trained on 6,000 calibrated synthetic project archetypes and CEA benchmarks. Estimates timeline slippage, cost overrun, and feature attributions.",
     pil_2_title: "Multi-Factor Threat Hotspot Scoring",
     pil_2_desc: "Mathematical threat formulation isolating 6 critical dimensions: Land, Environmental, Contractor History, Weather, Supply Chain, and Financing into hazard zones.",
-    pil_3_title: "RAG-Driven Mitigation Playbook",
-    pil_3_desc: "Vector search over CEA circulars, MoEFCC guidelines, and statutory reference frameworks synthesizing tailored mitigation steps.",
-    pil_4_title: "Autonomous Multi-Agent Coordination",
-    pil_4_desc: "5 specialized autonomous agents orchestrating predictions, threat radar, mitigation synthesis, and multi-channel hierarchical alerts to District Collectors and Board Directors.",
+    pil_3_title: "TF-IDF Mitigation Intelligence (6 Curated Frameworks)",
+    pil_3_desc: "TF-IDF retrieval over 6 curated authority frameworks (CEA, MoEFCC, CERC, RFCTLARR) synthesizing illustrative mitigation steps.",
+    pil_4_title: "5-Agent Decision-Support Pipeline",
+    pil_4_desc: "5 specialized rule & ML agents collaborating to validate predictions, assess risk vectors, and synthesize consensus recommendations.",
 
     // Demo Section
     demo_eyebrow: "INTERACTIVE PREDICTION WORKBENCH",
@@ -307,15 +307,15 @@ const I18N = {
     // Solution Section
     sol_eyebrow: "पूर्वानुमान प्रणाली",
     sol_title: "PowerPredict AI कैसे समाधान करता है",
-    sol_desc: "चार स्तंभों पर आधारित प्रणाली: मशीन लर्निंग पूर्वानुमान, बहु-कारकीय जोखिम स्कोरिंग, विनियामक RAG ज्ञान पुनर्प्राप्ति और 5 स्वायत्त एजेंट।",
+    sol_desc: "चार स्तंभों पर आधारित प्रणाली: मशीन लर्निंग पूर्वानुमान, बहु-कारकीय जोखिम स्कोरिंग, 6 संदर्भों पर TF-IDF विनियामक खोज और 5-एजेंट निर्णय समर्थन पाइपलाइन।",
     pil_1_title: "ML लागत एवं समयसीमा इंजन",
     pil_1_desc: "6,000 कैलिब्रेटेड सिंथेटिक आर्किटाइप्स और CEA बेंचमार्क्स पर प्रशिक्षित डुअल XGBoost इंजन। विलंब और लागत वृद्धि का सांख्यिकीय पूर्वानुमान।",
     pil_2_title: "बहु-कारकीय जोखिम हॉटस्पॉट स्कोरिंग",
     pil_2_desc: "6 महत्वपूर्ण आयाम: भूमि, पर्यावरण, ठेकेदार इतिहास, मौसम, आपूर्ति श्रृंखला और वित्तपोषण को लाल, पीले और हरे क्षेत्रों में वर्गीकृत करता है।",
-    pil_3_title: "RAG-आधारित निवारक कार्य योजना",
-    pil_3_desc: "सीईए परिपत्रों, MoEFCC दिशानिर्देशों और वैधानिक संदर्भों से प्राप्त कार्य योजना।",
-    pil_4_title: "स्वायत्त मल्टी-एजेंट समन्वय",
-    pil_4_desc: "5 विशिष्ट स्वायत्त एजेंट जो पूर्वानुमान, जोखिम विश्लेषण, निवारक सुझाव और जिला कलेक्टरों व बोर्ड सदस्यों को स्वचालित अलर्ट भेजते हैं।",
+    pil_3_title: "TF-IDF निवारक कार्य योजना (6 संदर्भ)",
+    pil_3_desc: "सीईए परिपत्रों, MoEFCC दिशानिर्देशों और CERC संदर्भों से प्राप्त सांकेतिक कार्य योजना।",
+    pil_4_title: "5-एजेंट निर्णय-समर्थन पाइपलाइन",
+    pil_4_desc: "5 विशिष्ट एजेंट जो पूर्वानुमान, जोखिम विश्लेषण, निवारक सुझाव और सांकेतिक अलर्ट तैयार करते हैं।",
 
     // Demo Section
     demo_eyebrow: "इंटरैक्टिव कार्यक्षेत्र",
@@ -546,8 +546,8 @@ const slidesData = [
   },
   {
     bg: "/static/assets/slide_solar_wind.jpg",
-    title: `Autonomous <span class="cursive-gold">Multi-Agent</span> Governance for <br><span class="cursive-gold cursive-large">5,420 Projects</span> Across 36 <br><span class="npp-sector-bold">States & UTs</span>`,
-    sub: "5 specialized co-pilot agents continuously cross-referencing CEA operational metrics, MoEFCC fast-track environmental circulars, and CERC contractual risk profiles across solar and wind farms."
+    title: `5-Agent <span class="cursive-gold">Decision-Support</span> Pipeline for <br><span class="cursive-gold cursive-large">6,000 Synthetic Projects</span> Across 36 <br><span class="npp-sector-bold">States & UTs</span>`,
+    sub: "5 specialized co-pilot agents cross-referencing statutory references, heuristic risk formulas, and XGBoost models across synthetic training projects."
   },
   {
     bg: "/static/assets/slide_hydro_dam.jpg",
@@ -640,7 +640,7 @@ window.handleArcClick = function(sector) {
   if (sector === "transmission") {
     alert("National Transmission Grid Sector:\n• Monitored Lines: 4,85,000 ckm\n• Inter-regional Capacity: 112 GW\n• Primary Delay Driver: Forest & Linear Right-of-Way (RoW) Clearance\n\nLaunching AI Control Dashboard with Transmission Baselines...");
   } else if (sector === "capacity") {
-    alert("National Installed Capacity Sector:\n• Total All-India Capacity: 446.2 GW\n• Central: 104 GW | State: 109 GW | Private: 233 GW\n• Monitored Capital Projects: 5,420 Units\n\nLaunching AI Control Dashboard...");
+    alert("National Installed Capacity Sector:\n• Total All-India Capacity: 446.2 GW\n• Central: 104 GW | State: 109 GW | Private: 233 GW\n• Training Dataset: 6,000 Synthetic Projects (Plus 12 Real CEA Mega-Project Benchmarks)\n\nLaunching AI Control Dashboard...");
   } else if (sector === "generation") {
     alert("National Power Generation Sector:\n• Thermal, Hydro, Nuclear & Hybrid Systems\n• Chronic Delay Average: 18–24 Months\n• Annual Cost Overrun Burden: ₹2-3 Lakh Crore\n\nLaunching AI Control Dashboard...");
   }
@@ -1709,9 +1709,9 @@ function renderRAGRecommendations(data) {
   const isHi = currentLanguage === "hi";
 
   document.getElementById("rag-timeline-saved").textContent = recs.timeline_progression;
-  document.getElementById("rag-months-saved-badge").textContent = isHi ? `${recs.total_months_saved} माह बचाए!` : `${recs.total_months_saved} Months Saved!`;
+  document.getElementById("rag-months-saved-badge").textContent = isHi ? `${recs.total_months_saved} माह बचाए (सांकेतिक)!` : `${recs.total_months_saved} Mo Saved (Illustrative)!`;
   document.getElementById("rag-cost-saved").textContent = recs.cost_progression;
-  document.getElementById("rag-rupees-saved-badge").textContent = isHi ? `${recs.total_cost_saving} बचाए!` : `${recs.total_cost_saving} Preserved!`;
+  document.getElementById("rag-rupees-saved-badge").textContent = isHi ? `${recs.total_cost_saving} बचाए (सांकेतिक)!` : `${recs.total_cost_saving} Saved (Illustrative)!`;
 
   const container = document.getElementById("rag-actions-container");
   container.innerHTML = "";
@@ -1736,7 +1736,7 @@ function renderRAGRecommendations(data) {
         <div class="action-meta-row">
           <div><strong>${isHi ? 'प्राधिकरण' : 'Authority'}:</strong> ${action.responsible}</div>
           <div><strong>${isHi ? 'समयसीमा' : 'Timeline'}:</strong> ${action.timeline}</div>
-          <div><strong>${isHi ? 'शुद्ध बचत' : 'Net Saving'}:</strong> <span class="text-success font-bold">₹${action.net_saving_cr} Cr</span></div>
+          <div><strong>${isHi ? 'शुद्ध बचत' : 'Net Saving'}:</strong> <span class="text-success font-bold">₹${action.net_saving_cr} Cr</span> <span class="text-muted" style="font-size: 0.72rem;">(${isHi ? 'सांकेतिक' : 'Illustrative estimate'})</span></div>
           <div><strong>${isHi ? 'दिशानिर्देश' : 'Reference'}:</strong> <span class="text-mono">${action.source_ref}</span></div>
         </div>
       </div>
@@ -3093,8 +3093,8 @@ const VIDEO_CHAPTERS = [
     end: 77.90,
     sceneId: "scene-4",
     chipId: "chip-4",
-    ccEn: "Stage 4: Semantic RAG Regulatory Retrieval. Vector-searching CEA and environmental reference frameworks to prescribe fast-track statutory mitigation playbooks.",
-    ccHi: "चरण 4: सिमेंटिक RAG विनियामक खोज। सीईए और पर्यावरण संदर्भों के आधार पर त्वरित वैधानिक शमन कार्य योजना का निर्माण।",
+    ccEn: "Stage 4: TF-IDF Regulatory Retrieval over 6 Curated Frameworks. Searching statutory reference frameworks to prescribe fast-track mitigation playbooks with illustrative estimates.",
+    ccHi: "चरण 4: 6 क्यूरेटेड संदर्भों पर TF-IDF विनियामक खोज। संदर्भों के आधार पर सांकेतिक शमन कार्य योजना का निर्माण।",
   },
   {
     id: 5,
@@ -3103,8 +3103,8 @@ const VIDEO_CHAPTERS = [
     end: 94.52,
     sceneId: "scene-5",
     chipId: "chip-5",
-    ccEn: "Stage 5: Autonomous Multi-Channel Escalation. Dispatched WhatsApp & SMS memos to authorities; generated executive audit dossier with an immutable SHA-256 seal.",
-    ccHi: "चरण 5: स्वायत्त बहु-स्तरीय चेतावनी। अधिकारियों को व्हाट्सएप और एसएमएस मेमो प्रेषित; SHA-256 डिजिटल सील युक्त ऑडिट डॉसियर तैयार।"
+    ccEn: "Stage 5: Stakeholder Escalation (Active Email, Simulated SMS/WhatsApp) & PDF Export. Generated executive audit dossier with a SHA-256 seal.",
+    ccHi: "चरण 5: हितधारक चेतावनी (सक्रिय ईमेल, सिमुलेटेड एसएमएस/व्हाट्सएप) एवं पीडीएफ निर्यात। SHA-256 डिजिटल सील युक्त ऑडिट डॉसियर तैयार।"
   }
 ];
 

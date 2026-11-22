@@ -1,7 +1,7 @@
 """
 PowerPredict AI - Audit & Evidence Dossier Subsystem
-Generates cryptographically validated, standardized Project Audit Bundles
-for power sector project planning and statutory risk audits.
+Generates cryptographically validated Project Audit Bundles
+with SHA-256 digest packaging for project planning and risk reviews.
 """
 
 import json
@@ -13,8 +13,8 @@ class EvidenceBundler:
     @staticmethod
     def create_evidence_bundle(pipeline_result: Dict[str, Any]) -> Dict[str, Any]:
         """
-        Extracts and structures the pipeline result into the standardized
-        Institutional Project Audit Dossier schema with SHA-256 verification.
+        Extracts and structures the pipeline result into a verifiable Project Audit
+        Dossier with SHA-256 cryptographic digest packaging.
         """
         proj_details = pipeline_result.get("project_details", {})
         predictions = pipeline_result.get("predictions", {})
@@ -90,7 +90,7 @@ class EvidenceBundler:
         bundle["audit_verification"] = {
             "sha256_hash": sha256_hash,
             "status": "CRYPTOGRAPHICALLY_VERIFIED",
-            "certifying_authority": "PowerPredict Intelligence - National Project Verification Registry",
+            "certifying_authority": "PowerPredict AI - Local Cryptographic Audit Engine",
             "timestamp_epoch": int(datetime.now().timestamp())
         }
 

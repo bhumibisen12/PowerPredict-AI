@@ -1,7 +1,7 @@
 """
-PowerPredict AI - Pillar 3: RAG-Based Recommendations Engine
-Retrieval-Augmented Generation for Power Sector Risk Mitigation
-Indexes curated authority reference frameworks and statutory guidelines.
+PowerPredict AI - Pillar 3: TF-IDF Regulatory Retrieval Engine
+Retrieval over 6 curated authority reference frameworks and statutory guidelines.
+Generates illustrative delay and cost mitigation estimates based on heuristic recovery models.
 """
 
 import json
@@ -176,11 +176,12 @@ class RAGRecommendationEngine:
             "total_timeline_reduction": f"{total_months_saved} months",
             "total_months_saved": total_months_saved,
             "optimized_timeline_months": optimized_timeline,
-            "timeline_progression": f"{predicted_timeline} → {optimized_timeline} months ({total_months_saved} months saved)",
+            "timeline_progression": f"{predicted_timeline} → {optimized_timeline} months ({total_months_saved} months saved - illustrative estimate)",
             "total_cost_saving": f"₹{total_cost_saving_cr} crore",
             "total_cost_saving_cr": total_cost_saving_cr,
             "optimized_cost_cr": optimized_cost,
-            "cost_progression": f"₹{predicted_cost} crore → ₹{optimized_cost} crore (₹{total_cost_saving_cr} crore saved)",
+            "cost_progression": f"₹{predicted_cost} crore → ₹{optimized_cost} crore (₹{total_cost_saving_cr} crore saved - illustrative estimate)",
+            "estimate_nature": "Illustrative estimate (heuristic recovery formula based on 6 curated frameworks; not an operational guarantee)",
             "actions": actions,
             "citations": [doc.get("source") for doc in retrieved_docs]
         }

@@ -72,12 +72,12 @@ def init_auth_db():
     """)
     conn.commit()
 
-    # Pre-seed verified enterprise demo roles if not present
+    # Pre-seed verified demo roles if not present
     seed_users = [
-        ("Dr. Arvind Sharma", "director@powerpredict.ai", "Director@2026", "Power Infrastructure Authority", "Project Director"),
-        ("Er. Priya Patel", "discom@powerpredict.ai", "Discom@2026", "State Electricity Board", "State Power Board"),
-        ("Col. Rajesh Varma", "epc@powerpredict.ai", "Epc@2026", "L&T Infrastructure Projects", "Lead EPC Contractor"),
-        ("Smt. Sunita Rao", "auditor@powerpredict.ai", "Auditor@2026", "Independent Regulatory Auditor", "Regulatory Auditor")
+        ("Bhumi Bisen", "director@powerpredict.ai", "Director@2026", "PowerPredict AI Research", "Project Director"),
+        ("State Grid Lead", "discom@powerpredict.ai", "Discom@2026", "State Power Utility (Demo)", "State Power Board"),
+        ("EPC Project Manager", "epc@powerpredict.ai", "Epc@2026", "EPC Execution Team (Demo)", "Lead EPC Contractor"),
+        ("Compliance Auditor", "auditor@powerpredict.ai", "Auditor@2026", "Independent Regulatory Auditor (Demo)", "Regulatory Auditor")
     ]
     for name, email, pwd, org, role in seed_users:
         c.execute("SELECT id FROM users WHERE email = ?", (email.lower(),))
