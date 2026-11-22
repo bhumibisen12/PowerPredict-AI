@@ -23,3 +23,4 @@ jobs:
       - name: Run automated tests
         run: |
           python -m pytest tests/test_engine.py -v
+
