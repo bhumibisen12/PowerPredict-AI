@@ -1,7 +1,7 @@
 """
 PowerPredict AI - Pillar 3: RAG-Based Recommendations Engine
 Retrieval-Augmented Generation for Power Sector Risk Mitigation
-Indexes 10,000+ historical power projects, CEA reports, and MoP circulars.
+Indexes curated authority reference frameworks and statutory guidelines.
 """
 
 import json
