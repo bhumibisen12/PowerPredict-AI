@@ -292,5 +292,12 @@ if FRONTEND_DIR.exists():
 def serve_index():
     index_file = FRONTEND_DIR / "index.html"
     if index_file.exists():
-        return FileResponse(index_file)
+        return FileResponse(
+            index_file,
+            headers={
+                "Cache-Control": "no-cache, no-store, must-revalidate",
+                "Pragma": "no-cache",
+                "Expires": "0"
+            }
+        )
     return {"message": "PowerPredict AI Backend is running."}
