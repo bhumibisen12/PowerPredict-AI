@@ -1,7 +1,7 @@
 """
 PowerPredict AI - Audit & Evidence Dossier Subsystem
 Generates cryptographically validated, standardized Project Audit Bundles
-conforming to Central Electricity Authority (CEA) and Ministry of Power audit standards.
+for power sector project planning and statutory risk audits.
 """
 
 import json

@@ -1,6 +1,6 @@
 """
 PowerPredict AI - Domain-Calibrated Stochastic Dataset Generator
-Calibrated with Central Electricity Authority (CEA) & Ministry of Power Infrastructure Baselines.
+Synthetic dataset generator calibrated with public Central Electricity Authority (CEA) infrastructure reports.
 Generates 6,000 stochastic project archetypes with realistic non-linear bottlenecks,
 log-normal fat-tail schedule slippages, and empirical unobserved variance.
 Supports all 36 Indian States/UTs and 19 Infrastructure Project Categories.

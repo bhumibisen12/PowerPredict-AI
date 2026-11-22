@@ -13,7 +13,7 @@ class StakeholderCoordinationAgent:
         self.name = "Stakeholder Coordination Agent"
         self.agent_id = "agent_05_coordination"
         self.role = "Autonomous Multi-Agency Orchestration & Hierarchical Escalation"
-        self.channels_supported = ["Official Secure Email", "Encrypted SMS", "WhatsApp Enterprise API", "MoP Portal Memo"]
+        self.channels_supported = ["Secure Email", "Encrypted SMS", "WhatsApp API", "Project Management Notification"]
 
     def execute(
         self,
@@ -87,14 +87,14 @@ class StakeholderCoordinationAgent:
             dispatches.append({
                 "recipient": f"District Collector & Magistrate, {district}",
                 "organization": f"Revenue Department, Government of {state}",
-                "channel": "Official Government e-Office Memo",
-                "subject": f"🏛️ Priority Intervention: Fast-Track Land Acquisition for National Grid Project {proj_id}",
+                "channel": "Automated Notification System",
+                "subject": f"Priority Intervention: Land Acquisition Review for Project {proj_id}",
                 "message": (
-                    f"Hon'ble Collector: Project {proj_name} ({district}) faces potential 12-18 months title dispute delay (Risk Score: {land_risk:.2f}). "
-                    f"Requesting revenue cell single-window demarcation and 15% incentive framework adoption under RFCTLARR Act guidelines."
+                    f"Notice: Project {proj_name} ({district}) faces potential 12-18 months title dispute delay (Risk Score: {land_risk:.2f}). "
+                    f"Recommended single-window demarcation and statutory incentive framework review."
                 ),
                 "timestamp": now_str,
-                "status": "TRANSMITTED (Govt e-Office Ref: EO-2026/PP-994)"
+                "status": "DISPATCHED (Ref: DISP-2026/PP-994)"
             })
             logs.append(f"[{self.name}] Dispatched statutory priority memo to District Collector ({district}).")
 
@@ -115,22 +115,22 @@ class StakeholderCoordinationAgent:
             })
             logs.append(f"[{self.name}] Escalated critical dossier to State Electricity Board Board of Directors.")
 
-        # 5. Ministry of Power / NITI Aayog (Level 4)
+        # 5. Executive Steering Committee (Level 4)
         if score >= 0.95:
             alerts_sent_flags["ministry_of_power"] = True
             dispatches.append({
-                "recipient": "Joint Secretary (Transmission/Renewables), Ministry of Power & NITI Aayog Infrastructure Committee",
-                "organization": "Government of India, Shram Shakti Bhawan, New Delhi",
-                "channel": "National Infrastructure Monitoring Portal (PRAGATI / MoP)",
-                "subject": f"🚨 NATIONAL HIGH-LEVEL ALERT: Imminent Project Failure Risk - {proj_id}",
+                "recipient": "Executive Project Steering Committee & Apex Infrastructure Review Cell",
+                "organization": "Central Project Governance Grid",
+                "channel": "Executive Telemetry Alert System",
+                "subject": f"🚨 HIGH-LEVEL ALERT: Imminent Project Schedule Failure Risk - {proj_id}",
                 "message": (
                     f"High-Level Alert: Project {proj_name} ({state}) shows extreme delay risk {score:.2f} exceeding critical thresholds. "
-                    f"Severe cost overrun (>40%) and grid stability shortfall imminent. Recommending national empowered group intervention."
+                    f"Severe cost overrun (>40%) and grid stability shortfall projected. Recommending executive intervention."
                 ),
                 "timestamp": now_str,
-                "status": "ESCALATED TO NITI AAYOG"
+                "status": "ESCALATED TO EXECUTIVE COMMITTEE"
             })
-            logs.append(f"[{self.name}] Emergency national escalation to Ministry of Power & NITI Aayog.")
+            logs.append(f"[{self.name}] Emergency executive escalation dispatched.")
 
         logs.append(f"[{self.name}] Autonomous coordination completed. {len(dispatches)} high-priority stakeholder communications dispatched.")
 
