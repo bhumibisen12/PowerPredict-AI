@@ -1,7 +1,8 @@
 """
-PowerPredict AI - Historical Dataset Generator
-Generates realistic historical dataset of 6,000+ Indian Power Projects (CEA & MoP calibrated)
-Used for training high-precision XGBoost Cost Overrun & Timeline Delay Prediction Models.
+PowerPredict AI - Domain-Calibrated Stochastic Dataset Generator
+Calibrated with Central Electricity Authority (CEA) & Ministry of Power Infrastructure Baselines.
+Generates 6,000 stochastic project archetypes with realistic non-linear bottlenecks,
+log-normal fat-tail schedule slippages, and empirical unobserved variance.
 Supports all 36 Indian States/UTs and 19 Infrastructure Project Categories.
 """
 
@@ -14,7 +15,7 @@ def generate_indian_power_dataset(num_samples: int = 6000, seed: int = 42) -> pd
     np.random.seed(seed)
     
     states = list(INDIAN_POWER_STATES.keys())
-    # State weights proportional to power capacity/activity in India
+    # State weights proportional to power activity in India
     weights = []
     for s in states:
         info = INDIAN_POWER_STATES[s]
@@ -33,7 +34,10 @@ def generate_indian_power_dataset(num_samples: int = 6000, seed: int = 42) -> pd
         "Maharashtra": ["Dhule", "Solapur", "Osmanabad", "Nagpur", "Beed"],
         "Andhra Pradesh": ["Kurnool", "Anantapur", "Kadapa", "Nellore"],
         "Odisha": ["Jharsuguda", "Sundargarh", "Angul", "Sambalpur"],
-        "Bihar": ["Kahalgaon", "Barh", "Buxar", "Nabinagar"]
+        "Bihar": ["Kahalgaon", "Barh", "Buxar", "Nabinagar"],
+        "Assam": ["Dima Hasao", "Kamrup", "Cachar", "Dibrugarh"],
+        "Uttarakhand": ["Chamoli", "Tehri Garhwal", "Pithoragarh", "Dehradun"],
+        "Himachal Pradesh": ["Kinnaur", "Kullu", "Chamba", "Shimla"]
     }
 
     contractor_tiers = [
@@ -52,71 +56,76 @@ def generate_indian_power_dataset(num_samples: int = 6000, seed: int = 42) -> pd
         proj_type = np.random.choice(PROJECT_TYPES)
         state = np.random.choice(states, p=state_weights)
         
-        # Safe district fallback
         if state in districts_by_state:
             district = np.random.choice(districts_by_state[state])
         else:
             district = f"{state} Capital Industrial Hub"
             
-        contractor = np.random.choice(contractor_tiers, p=[0.40, 0.42, 0.18])
+        contractor = np.random.choice(contractor_tiers, p=[0.42, 0.40, 0.18])
         env_cat = np.random.choice(env_cats, p=[0.35, 0.45, 0.20])
 
         st_info = INDIAN_POWER_STATES[state]
         state_land_base = float(st_info.get("avg_land_delay_months", 12.0)) / 22.0
         forest_pct = float(st_info.get("forest_cover_pct", 15.0)) / 40.0
 
-        # Capacity, cost, and timeline by sector
+        # Sector-Specific Scale & Cost Dynamics (Calibrated with CEA Norms)
         if "Solar" in proj_type:
             capacity_mw = float(np.random.choice([50, 100, 200, 300, 500, 750, 1000, 1500]))
-            land_acres = float(np.round(capacity_mw * np.random.uniform(3.6, 4.4), 0))
-            cost_per_mw = np.random.uniform(3.7, 4.3)
+            land_acres = float(np.round(capacity_mw * np.random.uniform(3.5, 4.4), 0))
+            cost_per_mw = np.random.uniform(3.7, 4.4) # Rs 3.7 - 4.4 Cr / MW
             est_cost_cr = round(capacity_mw * cost_per_mw, 1)
             est_timeline_months = int(np.round(12 + (capacity_mw / 250) * 2.2))
+            sector_delay_factor = 0.95
         elif "Wind" in proj_type:
             capacity_mw = float(np.random.choice([50, 100, 150, 250, 300, 500]))
             land_acres = float(np.round(capacity_mw * np.random.uniform(1.4, 2.2), 0))
-            cost_per_mw = np.random.uniform(5.4, 6.6)
+            cost_per_mw = np.random.uniform(5.5, 6.7)
             est_cost_cr = round(capacity_mw * cost_per_mw, 1)
             est_timeline_months = int(np.round(14 + (capacity_mw / 120) * 2.5))
+            sector_delay_factor = 1.05
         elif "Thermal" in proj_type or "Coal" in proj_type:
             capacity_mw = float(np.random.choice([500, 660, 800, 1320, 1600, 2400]))
             land_acres = float(np.round(capacity_mw * np.random.uniform(0.8, 1.3), 0))
-            cost_per_mw = np.random.uniform(7.5, 9.2)
+            cost_per_mw = np.random.uniform(7.5, 9.5)
             est_cost_cr = round(capacity_mw * cost_per_mw, 1)
             est_timeline_months = int(np.round(36 + (capacity_mw / 500) * 5.0))
+            sector_delay_factor = 1.35
         elif "Hydro" in proj_type or "Pumped" in proj_type:
             capacity_mw = float(np.random.choice([100, 250, 500, 800, 1200]))
             land_acres = float(np.round(capacity_mw * np.random.uniform(3.5, 6.5), 0))
-            cost_per_mw = np.random.uniform(8.5, 12.0)
+            cost_per_mw = np.random.uniform(8.5, 13.5)
             est_cost_cr = round(capacity_mw * cost_per_mw, 1)
             est_timeline_months = int(np.round(44 + (capacity_mw / 200) * 6.0))
+            sector_delay_factor = 1.60
         elif "Transmission" in proj_type or "Substation" in proj_type:
             capacity_mw = float(np.random.choice([400, 765, 1200, 2500, 4000]))
             land_acres = float(np.round(np.random.uniform(60, 280), 0))
             est_cost_cr = round(float(np.random.uniform(180, 1100)), 1)
             est_timeline_months = int(np.round(np.random.uniform(16, 30)))
+            sector_delay_factor = 1.15
         else: # Hybrid, Nuclear, BESS, Bioenergy
             capacity_mw = float(np.random.choice([100, 250, 500, 1000]))
             land_acres = float(np.round(capacity_mw * np.random.uniform(2.0, 4.0), 0))
             cost_per_mw = np.random.uniform(5.0, 7.5)
             est_cost_cr = round(capacity_mw * cost_per_mw, 1)
             est_timeline_months = int(np.round(20 + (capacity_mw / 200) * 3.0))
+            sector_delay_factor = 1.20
 
-        # 6 Ground risk factor scores
+        # Realistic 6 Ground Risk Factors with Heteroscedastic Noise
         land_scale = min(1.0, land_acres / 2200.0)
-        land_risk = float(np.clip(0.40 * state_land_base + 0.35 * land_scale + np.random.normal(0.15, 0.08), 0.05, 0.98))
+        land_risk = float(np.clip(0.40 * state_land_base + 0.35 * land_scale + np.random.normal(0.12, 0.12), 0.08, 0.96))
 
         env_weight = 0.85 if "Category-A" in env_cat else (0.55 if "Category-B1" in env_cat else 0.25)
-        env_risk = float(np.clip(0.50 * env_weight + 0.35 * forest_pct + np.random.normal(0.08, 0.06), 0.05, 0.98))
+        env_risk = float(np.clip(0.45 * env_weight + 0.35 * forest_pct + np.random.normal(0.08, 0.10), 0.08, 0.96))
 
-        contractor_base = 0.25 if "Tier-1" in contractor else (0.55 if "Tier-2" in contractor else 0.82)
-        contractor_risk = float(np.clip(contractor_base + np.random.normal(0.02, 0.07), 0.05, 0.98))
+        contractor_base = 0.25 if "Tier-1" in contractor else (0.55 if "Tier-2" in contractor else 0.80)
+        contractor_risk = float(np.clip(contractor_base + np.random.normal(0.02, 0.11), 0.08, 0.96))
 
-        weather_risk = float(np.clip(0.25 + (0.35 if ("Hydro" in proj_type or "Transmission" in proj_type) else 0.10) + np.random.normal(0.0, 0.06), 0.05, 0.95))
-        supply_chain_risk = float(np.clip(0.35 + (0.15 if ("Solar" in proj_type or "Battery" in proj_type) else 0.05) + np.random.normal(0.0, 0.06), 0.05, 0.95))
-        financing_risk = float(np.clip(0.30 + (0.12 if est_cost_cr > 1500 else 0.0) + np.random.normal(0.0, 0.06), 0.05, 0.95))
+        weather_risk = float(np.clip(0.25 + (0.35 if ("Hydro" in proj_type or "Transmission" in proj_type) else 0.10) + np.random.normal(0.0, 0.10), 0.08, 0.96))
+        supply_chain_risk = float(np.clip(0.35 + (0.15 if ("Solar" in proj_type or "Battery" in proj_type) else 0.05) + np.random.normal(0.0, 0.10), 0.08, 0.96))
+        financing_risk = float(np.clip(0.30 + (0.12 if est_cost_cr > 1500 else 0.0) + np.random.normal(0.0, 0.10), 0.08, 0.96))
 
-        # Delay Risk Index (D)
+        # Multi-factor Threat Score D
         delay_risk_score = round(float(
             0.25 * land_risk +
             0.20 * env_risk +
@@ -126,42 +135,48 @@ def generate_indian_power_dataset(num_samples: int = 6000, seed: int = 42) -> pd
             0.10 * financing_risk
         ), 3)
 
-        # Realistic Infrastructure Timeline Delay Mechanics (Critical path compounding):
-        base_delay_frac = 0.55 * delay_risk_score
-        specific_delay_months = (
-            land_risk * 5.8 +
-            contractor_risk * 4.2 +
-            env_risk * 3.4 +
-            weather_risk * 2.0 +
+        # Realistic Non-Linear Timeline Slippage Mechanics:
+        # 1. Systemic schedule drag
+        systemic_delay = est_timeline_months * (0.22 * delay_risk_score + 0.12 * (delay_risk_score**2)) * sector_delay_factor
+        
+        # 2. Critical path bottlenecks (non-linear powers)
+        bottleneck_delay = (
+            (land_risk**1.3) * 5.2 +
+            (contractor_risk**1.2) * 4.5 +
+            (env_risk**1.1) * 3.2 +
+            weather_risk * 2.2 +
             supply_chain_risk * 1.8 +
-            financing_risk * 1.5
-        )
-        timeline_delay_months = int(np.round(
-            est_timeline_months * base_delay_frac + 
-            specific_delay_months + 
-            np.random.normal(0.0, 0.6)
-        ))
+            financing_risk * 1.6
+        ) * sector_delay_factor
+        
+        # 3. Compounding synergy: high land risk + struggling contractor multiplies idle periods
+        synergy_delay = 3.2 * (land_risk * contractor_risk) + 2.5 * (env_risk * weather_risk)
+        
+        # 4. Stochastic fat-tailed shock (representing legal injunctions, NGT stays, or NCLT contractor insolvency)
+        shock_val = float(np.random.lognormal(mean=0.30 * delay_risk_score, sigma=0.45) - 1.0)
+        shock_delay = max(0.0, shock_val * 4.0)
+        
+        # 5. Genuine unobserved real-world variance (sigma = 2.8 months)
+        empirical_noise = float(np.random.normal(0.0, 2.8))
+
+        timeline_delay_months = int(np.round(systemic_delay + bottleneck_delay + synergy_delay + shock_delay + empirical_noise))
         timeline_delay_months = max(1, timeline_delay_months)
         actual_timeline_months = est_timeline_months + timeline_delay_months
 
         # Realistic Capital Overrun Mechanics:
-        # Driven by IDC (9.5% annual interest during construction across delayed months),
-        # plus land compensation settlement and contractor idle disputes.
-        idc_overrun_pct = (timeline_delay_months / max(12, est_timeline_months)) * 0.16
-        land_cost_component = 0.08 * (land_risk ** 1.3)
-        contractor_cost_component = 0.07 * (contractor_risk ** 1.2)
-        supply_chain_component = 0.05 * supply_chain_risk
-        financing_cost_component = 0.04 * financing_risk
+        # 1. Interest During Construction (IDC): 9.5% annual rate on 70% debt proportion
+        idc_factor = 0.70 * (((1.0 + 0.095)**(timeline_delay_months / 12.0)) - 1.0)
         
-        cost_overrun_pct = round(float(
-            idc_overrun_pct +
-            land_cost_component +
-            contractor_cost_component +
-            supply_chain_component +
-            financing_cost_component +
-            np.random.normal(0.01, 0.008)
-        ), 4)
-        cost_overrun_pct = max(0.04, min(0.75, cost_overrun_pct))
+        # 2. Contractor idle remobilization & price escalation
+        contractor_remobilization = 0.06 * (contractor_risk**1.3)
+        land_revision_cost = 0.05 * (land_risk**1.2)
+        supply_cost = 0.04 * supply_chain_risk
+        
+        # 3. Real-world cost variance (sigma = 3.2%)
+        cost_noise = float(np.random.normal(0.0, 0.032))
+
+        cost_overrun_pct = round(float(idc_factor + contractor_remobilization + land_revision_cost + supply_cost + cost_noise), 4)
+        cost_overrun_pct = max(0.03, min(0.85, cost_overrun_pct))
         actual_cost_cr = round(est_cost_cr * (1.0 + cost_overrun_pct), 1)
 
         records.append({
@@ -191,7 +206,7 @@ def generate_indian_power_dataset(num_samples: int = 6000, seed: int = 42) -> pd
     df = pd.DataFrame(records)
     csv_path = SAMPLE_DATA_DIR / "power_projects.csv"
     df.to_csv(csv_path, index=False)
-    print(f"Generated {len(df)} authentic historical power project records to {csv_path}")
+    print(f"Generated {len(df)} stochastic power project archetypes to {csv_path}")
     return df
 
 if __name__ == "__main__":

@@ -1,8 +1,9 @@
 """
 PowerPredict AI - Pillar 1: ML-Based Cost & Timeline Prediction Engine
 Utilizes Tuned XGBoost Regressors with Domain-Specific Feature Engineering & Explainable AI (XAI)
-Calibrated on 6,000+ Indian Power Project historical records across all 36 States/UTs.
-Achieves >94.5% Cost Overrun Accuracy and >99.0% Timeline Delay Accuracy.
+Trained on 6,000 Stochastic Indian Power Project Archetypes (CEA & MoP Baselines)
+and Benchmarked against Curated Real-World Indian Mega-Projects (Subansiri, Barh, Bhadla, Tapovan).
+Achieves ~75.0% Cost Overrun R² and ~85.5% Timeline Slippage R² with ~2.8 Months MAE.
 """
 
 import os
@@ -150,9 +151,11 @@ class PowerPredictMLEngine:
 
         self.metrics = {
             "cost_r2": round(cost_r2, 4),
+            "cost_mae_percentage_points": round(cost_mae * 100, 2),
             "cost_mae_pct": round(cost_mae * 100, 2),
             "timeline_r2": round(time_r2, 4),
             "timeline_mae_months": round(time_mae, 2),
+            "average_r2": round((cost_r2 + time_r2) / 2.0, 4),
             "overall_accuracy_pct": round(((cost_r2 + time_r2) / 2.0) * 100, 2),
             "trained_samples": len(df)
         }
@@ -234,11 +237,11 @@ class PowerPredictMLEngine:
         delay_months = int(np.round(max(1.0, raw_delay_months)))
         predicted_timeline = est_timeline + delay_months
 
-        # High-precision Statistical Confidence based on trained R2 (95% - 98.5%)
-        base_conf = float(self.metrics.get("overall_accuracy_pct", 96.8) / 100.0)
-        variance_penalty = abs(overrun_pct - 0.25) * 0.05
-        confidence = float(np.clip(base_conf - variance_penalty, 0.92, 0.985))
-        confidence = round(confidence, 3)
+        # Model Reliability Score based on average R² (~75% - 85%)
+        base_reliability = float(self.metrics.get("average_r2", 0.8022))
+        variance_penalty = abs(overrun_pct - 0.25) * 0.08
+        reliability = float(np.clip(base_reliability - variance_penalty, 0.72, 0.88))
+        confidence = round(reliability, 3)
 
         # Explainable AI (XAI) Feature Attribution Breakdown:
         total_risk_weight_sum = (
@@ -300,9 +303,9 @@ class PowerPredictMLEngine:
         ]
         xai_breakdown.sort(key=lambda x: x["delay_months_impact"], reverse=True)
 
-        cost_r2 = self.metrics.get("cost_r2", 0.9461)
-        timeline_r2 = self.metrics.get("timeline_r2", 0.9889)
-        overall_acc = self.metrics.get("overall_accuracy_pct", 96.75)
+        cost_r2 = self.metrics.get("cost_r2", 0.7491)
+        timeline_r2 = self.metrics.get("timeline_r2", 0.8552)
+        overall_acc = self.metrics.get("overall_accuracy_pct", 80.22)
 
         cost_dict = {
             "value": f"₹{predicted_cost} crore",
@@ -333,9 +336,9 @@ class PowerPredictMLEngine:
 
         meta_dict = {
             "cost_r2_score": cost_r2,
-            "cost_mae_pct": self.metrics.get("cost_mae_pct", 0.79),
+            "cost_mae_pct": self.metrics.get("cost_mae_pct", 3.03),
             "timeline_r2_score": timeline_r2,
-            "timeline_mae_months": self.metrics.get("timeline_mae_months", 0.56),
+            "timeline_mae_months": self.metrics.get("timeline_mae_months", 2.83),
             "overall_accuracy_pct": overall_acc,
             "trained_samples": self.metrics.get("trained_samples", 6000)
         }
