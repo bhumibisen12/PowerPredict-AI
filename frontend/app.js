@@ -56,7 +56,7 @@ const I18N = {
     menu_reports: "REPORTS",
     menu_login: "LOGIN",
     npp_official_statement: "PowerPredict AI is a centralized decision support grid for the Indian Power Sector which facilitates predictive intelligence and continuous monitoring across generation and transmission utilities in the country, disseminating analyzed delay forecasts, capex risk graphs, and regulatory mitigation playbooks at all-India, regional, and state levels.",
-    npp_ai_extension_note: "National Infrastructure Decision Grid: Machine learning delay forecasting (96.8% accuracy), 6-factor risk scoring, and RAG regulatory mitigation playbooks.",
+    npp_ai_extension_note: "National Infrastructure Decision Grid: Machine learning delay forecasting (Cost R²: 0.749, Timeline R²: 0.855, Avg R²: 0.802), 6-factor risk scoring, and RAG regulatory mitigation playbooks.",
     nav_problem: "The Crisis",
     nav_solution: "Four Pillars",
     nav_demo: "Live Demo",
@@ -68,7 +68,7 @@ const I18N = {
     // Hero Section
     hero_eyebrow: "NATIONAL POWER SECTOR PREDICTIVE DECISION SUPPORT",
     hero_headline: "Predict Power Project Delays Before They Happen",
-    hero_subheadline: "Multi-factor AI prediction engine with 96.8% verified accuracy (Cost R²: 0.946, Timeline R²: 0.989). Forecast time & cost slippage 6 to 12 months in advance, preserving ₹50–100 Crore per capital project across solar, thermal, wind, and transmission corridors.",
+    hero_subheadline: "Dual-model XGBoost regression engine forecasting project timeline and cost slippage 6 to 12 months in advance across solar, thermal, wind, and transmission corridors (Cost R²: 0.749, Timeline R²: 0.855, Timeline MAE: 2.83 Mo, Cost MAE: 3.03 p.p.).",
     hero_cta_primary: "Explore Prediction Platform",
     hero_cta_secondary: "Enterprise Login",
     h_stat_1: "Projects Delayed (18-24 Mo Avg)",
@@ -92,11 +92,11 @@ const I18N = {
     sol_title: "How PowerPredict AI Solves It",
     sol_desc: "A four-pillar predictive intelligence platform combining supervised machine learning, multi-factor risk attribution, regulatory RAG retrieval, and autonomous multi-agent coordination.",
     pil_1_title: "ML-Based Cost & Timeline Engine",
-    pil_1_desc: "XGBoost regressor and temporal critical path forecasting trained on 5,000+ power projects. Computes exact delay months, budget overrun, and statistical confidence.",
+    pil_1_desc: "Dual XGBoost regression engine trained on 6,000 calibrated synthetic project archetypes and CEA benchmarks. Estimates timeline slippage, cost overrun, and feature attributions.",
     pil_2_title: "Multi-Factor Threat Hotspot Scoring",
     pil_2_desc: "Mathematical threat formulation isolating 6 critical dimensions: Land, Environmental, Contractor History, Weather, Supply Chain, and Financing into hazard zones.",
     pil_3_title: "RAG-Driven Mitigation Playbook",
-    pil_3_desc: "Vector search over 10,000+ historical power reports, CEA bulletins, MoEFCC fast-track circulars, and CERC contracts synthesizing tailored bilingual intervention steps.",
+    pil_3_desc: "Vector search over CEA circulars, MoEFCC guidelines, and statutory reference frameworks synthesizing tailored mitigation steps.",
     pil_4_title: "Autonomous Multi-Agent Coordination",
     pil_4_desc: "5 specialized autonomous agents orchestrating predictions, threat radar, mitigation synthesis, and multi-channel hierarchical alerts to District Collectors and Board Directors.",
 
@@ -170,7 +170,7 @@ const I18N = {
     kpi_cost_title: "PREDICTED PROJECT COST",
     kpi_timeline_title: "PREDICTED TIMELINE",
     kpi_risk_title: "DELAY RISK SCORE (D)",
-    kpi_conf_title: "MODEL CONFIDENCE",
+    kpi_conf_title: "MODEL RELIABILITY (AVG R²)",
     kpi_risk_sub: "Multi-Attribute Risk Metric (0.00 to 1.00)",
     kpi_conf_sub: "Calibrated on 6,000+ Power Projects (36 States/UTs)",
     lbl_baseline: "Baseline",
@@ -206,7 +206,7 @@ const I18N = {
     th_precedent: "Historical Context & Precedent",
     rag_eyebrow: "RETRIEVAL-AUGMENTED GENERATION",
     rag_title: "Actionable Mitigation Plan",
-    rag_desc: "Synthesized from 10,000+ past Indian power project reports, CEA guidelines, and MoEFCC fast-track procedures.",
+    rag_desc: "Synthesized from CEA regulatory circulars, CERC guidelines, and statutory reference frameworks.",
     lbl_timeline_saving: "TIMELINE REDUCTION",
     lbl_cost_saving: "COST PRESERVATION",
     citations_title: "Regulatory Citations & Precedents",
@@ -271,7 +271,7 @@ const I18N = {
     menu_reports: "रिपोर्ट्स",
     menu_login: "लॉगिन",
     npp_official_statement: "PowerPredict AI भारतीय विद्युत क्षेत्र के लिए एक केंद्रीकृत निर्णय समर्थन प्रणाली है जो देश में उत्पादन और पारेषण उपयोगिताओं की सतत निगरानी करती है, तथा अखिल भारतीय, क्षेत्रीय और राज्य स्तर पर परियोजना विलंब पूर्वानुमान, कैपेक्स जोखिम रेखाचित्र और विनियामक कार्य योजना प्रसारित करती है।",
-    npp_ai_extension_note: "राष्ट्रीय अवसंरचना निर्णय ग्रिड: मशीन लर्निंग विलंब पूर्वानुमान (96.8% सटीकता), 6-कारकीय जोखिम स्कोरिंग और RAG विनियामक कार्य योजना।",
+    npp_ai_extension_note: "राष्ट्रीय अवसंरचना निर्णय ग्रिड: मशीन लर्निंग विलंब पूर्वानुमान (लागत R²: 0.749, समय R²: 0.855, औसत R²: 0.802), 6-कारकीय जोखिम स्कोरिंग और RAG विनियामक कार्य योजना।",
     nav_problem: "समस्या",
     nav_solution: "चार स्तंभ",
     nav_demo: "लाइव डेमो",
@@ -283,7 +283,7 @@ const I18N = {
     // Hero Section
     hero_eyebrow: "राष्ट्रीय विद्युत अवसंरचना अग्रिम निर्णय प्रणाली",
     hero_headline: "विद्युत परियोजनाओं के विलंब को शुरू होने से पहले रोकें",
-    hero_subheadline: "96.8% सत्यापित सटीकता के साथ बहु-कारकीय AI पूर्वानुमान इंजन (लागत R²: 0.946, समय R²: 0.989)। सौर, ताप, पवन और ट्रांसमिशन परियोजनाओं में 6 से 12 महीने पहले विलंब और लागत वृद्धि का पूर्वानुमान लगाएं, प्रति परियोजना ₹50–100 करोड़ की बचत करें।",
+    hero_subheadline: "डुअल XGBoost रिग्रेशन इंजन द्वारा सौर, ताप, पवन और ट्रांसमिशन परियोजनाओं में 6 से 12 महीने पहले समय और लागत वृद्धि का पूर्वानुमान (लागत R²: 0.749, समय R²: 0.855, समय MAE: 2.83 माह, लागत MAE: 3.03 p.p.)।",
     hero_cta_primary: "पूर्वानुमान प्लेटफ़ॉर्म देखें",
     hero_cta_secondary: "एंटरप्राइज़ लॉगिन",
     h_stat_1: "परियोजनाएं विलंबित (औसत 18-24 माह)",
@@ -307,11 +307,11 @@ const I18N = {
     sol_title: "PowerPredict AI कैसे समाधान करता है",
     sol_desc: "चार स्तंभों पर आधारित प्रणाली: मशीन लर्निंग पूर्वानुमान, बहु-कारकीय जोखिम स्कोरिंग, विनियामक RAG ज्ञान पुनर्प्राप्ति और 5 स्वायत्त एजेंट।",
     pil_1_title: "ML लागत एवं समयसीमा इंजन",
-    pil_1_desc: "5,000+ परियोजनाओं पर प्रशिक्षित XGBoost रिग्रेसर और क्रिटिकल पाथ विश्लेषण। सटीक विलंब माह, बजट वृद्धि और सांख्यिकीय विश्वसनीयता।",
+    pil_1_desc: "6,000 कैलिब्रेटेड सिंथेटिक आर्किटाइप्स और CEA बेंचमार्क्स पर प्रशिक्षित डुअल XGBoost इंजन। विलंब और लागत वृद्धि का सांख्यिकीय पूर्वानुमान।",
     pil_2_title: "बहु-कारकीय जोखिम हॉटस्पॉट स्कोरिंग",
     pil_2_desc: "6 महत्वपूर्ण आयाम: भूमि, पर्यावरण, ठेकेदार इतिहास, मौसम, आपूर्ति श्रृंखला और वित्तपोषण को लाल, पीले और हरे क्षेत्रों में वर्गीकृत करता है।",
     pil_3_title: "RAG-आधारित निवारक कार्य योजना",
-    pil_3_desc: "10,000+ ऐतिहासिक रिपोर्टों, CEA बुलेटिन और MoEFCC SOPs से खोजी गई कार्य योजना जो समय और लागत की ठोस बचत निर्धारित करती है।",
+    pil_3_desc: "सीईए परिपत्रों, MoEFCC दिशानिर्देशों और वैधानिक संदर्भों से प्राप्त कार्य योजना।",
     pil_4_title: "स्वायत्त मल्टी-एजेंट समन्वय",
     pil_4_desc: "5 विशिष्ट स्वायत्त एजेंट जो पूर्वानुमान, जोखिम विश्लेषण, निवारक सुझाव और जिला कलेक्टरों व बोर्ड सदस्यों को स्वचालित अलर्ट भेजते हैं।",
 
@@ -421,7 +421,7 @@ const I18N = {
     th_precedent: "ऐतिहासिक संदर्भ एवं उदाहरण",
     rag_eyebrow: "पुनर्प्राप्ति-संवर्धित ज्ञान उत्पादन",
     rag_title: "कार्रवाई योग्य निवारक योजना",
-    rag_desc: "10,000+ ऐतिहासिक विद्युत परियोजनाओं, CEA दिशानिर्देशों और MoEFCC SOPs से संश्लेषित।",
+    rag_desc: "सीईए विनियामक परिपत्रों, सीईआरसी दिशानिर्देशों और वैधानिक संदर्भों से संश्लेषित।",
     lbl_timeline_saving: "समय बचत",
     lbl_cost_saving: "लागत बचत",
     citations_title: "वैधानिक संदर्भ एवं मानक",
@@ -540,7 +540,7 @@ const slidesData = [
   {
     bg: "/static/assets/npp_hero_bg.jpg",
     title: `A Centralized <span class="cursive-gold">Platform</span> for Collation and <br><span class="cursive-gold cursive-large">Dissemination</span> of Indian <br><span class="npp-sector-bold">Power Sector</span>`,
-    sub: "Multi-factor AI prediction engine with 96.8% verified accuracy (Cost R²: 0.946, Timeline R²: 0.989). Forecast time & cost slippage 6 to 12 months in advance, preserving ₹50–100 Crore per capital project across solar, thermal, wind, and transmission corridors."
+    sub: "Dual-model XGBoost regression engine forecasting project timeline and cost slippage 6 to 12 months in advance across solar, thermal, wind, and transmission corridors (Cost R²: 0.749, Timeline R²: 0.855, Timeline MAE: 2.83 Mo, Cost MAE: 3.03 percentage points)."
   },
   {
     bg: "/static/assets/slide_solar_wind.jpg",
@@ -2851,7 +2851,7 @@ window.triggerFileDownload = function(filename, content, mimeType = "text/plain;
 };
 
 // ============================================================================
-// CLIENT-SIDE ADOBE PDF 1.4 GENERATOR ENGINE (Pure JS, Standard Compliant)
+// CLIENT-SIDE PDF 1.4 GENERATOR (Pure JS, Standard Compliant)
 // ============================================================================
 
 function generatePdfBlob(title, docType, rows, extraMeta = {}) {
@@ -2877,7 +2877,7 @@ function generatePdfBlob(title, docType, rows, extraMeta = {}) {
   streamLines.push('BT /F2 8.5 Tf 0.1 0.2 0.35 rg 48 683 Td (CLASSIFICATION: CONFIDENTIAL STATUTORY AUDIT RECORD) Tj ET');
   streamLines.push('BT /F1 8 Tf 0.3 0.35 0.4 rg 48 669 Td (CEA-Aligned Multi-Factor Decision Grid  |  Generated On: ' + escapePdf(dateStr) + ') Tj ET');
   streamLines.push('BT /F1 8 Tf 0.3 0.35 0.4 rg 48 655 Td (Cryptographic Seal: SHA-256 e8b940a37c1d76589304e2849fcd0517830b057f9c2d1b) Tj ET');
-  streamLines.push('BT /F2 8 Tf 0.05 0.5 0.2 rg 48 643 Td (Model Precision: 96.8% Dual XGBoost Regressor | Cost R2=0.9461 | Timeline R2=0.9889) Tj ET');
+  streamLines.push('BT /F2 8 Tf 0.05 0.5 0.2 rg 48 643 Td (Model Regression Metrics: Cost R2=0.7491 [MAE 3.03 p.p.] | Timeline R2=0.8552 [MAE 2.83 Mo] | Avg R2=0.8022) Tj ET');
   
   // Table header
   streamLines.push('0.1 0.2 0.35 rg 36 610 540 18 re f');
@@ -3012,7 +3012,7 @@ window.downloadReport = function(type, format) {
     });
     rep += `================================================================================\n`;
     rep += `END OF PRUDENCE AUDIT REPORT - POWERPREDICT AI\n`;
-    // Generate Authentic Adobe PDF Document
+    // Generate Authentic PDF 1.4 Document
     const pdfBlob = generatePdfBlob(repType, "Audit Dossier", PORTFOLIO_PROJECTS);
     triggerPdfBlobDownload(`PowerPredict_${repType.replace(/\s+/g, '_')}_${timestamp}.pdf`, pdfBlob);
   }
@@ -3071,8 +3071,8 @@ const VIDEO_CHAPTERS = [
     end: 42.89,
     sceneId: "scene-2",
     chipId: "chip-2",
-    ccEn: "Stage 2: Dual XGBoost Machine Learning Inference. Forecasting cost overruns (+33.7%) and timeline delays (+18 Months) with 94.6% cost accuracy and 98.9% timeline precision.",
-    ccHi: "चरण 2: डुअल XGBoost मशीन लर्निंग इनफ़्रेंस। 94.6% लागत सटीकता और 98.9% समय-सीमा परिशुद्धता के साथ लागत और देरी का पूर्वानुमान।"
+    ccEn: "Stage 2: Dual XGBoost Machine Learning Inference. Forecasting cost overruns (+33.7%) and timeline delays (+18 Months) with Cost R²: 0.749 (MAE 3.03 p.p.) and Timeline R²: 0.855 (MAE 2.83 Mo).",
+    ccHi: "चरण 2: डुअल XGBoost मशीन लर्निंग इनफ़्रेंस। लागत R²: 0.749 (MAE 3.03 p.p.) और समय R²: 0.855 (MAE 2.83 माह) के साथ लागत और समय-सीमा विलंब का पूर्वानुमान।"
   },
   {
     id: 3,
@@ -3091,8 +3091,8 @@ const VIDEO_CHAPTERS = [
     end: 77.90,
     sceneId: "scene-4",
     chipId: "chip-4",
-    ccEn: "Stage 4: Semantic RAG Regulatory Retrieval. Vector-searching 10,000+ CEA and MoEFCC precedents to prescribe fast-track playbooks saving 15 months and ₹151.8 Crore.",
-    ccHi: "चरण 4: सिमेंटिक RAG विनियामक खोज। 10,000+ सीईए और पर्यावरण मिसालों से 15 महीने और ₹151.8 करोड़ बचाने वाले त्वरित समाधान की सिफारिश।"
+    ccEn: "Stage 4: Semantic RAG Regulatory Retrieval. Vector-searching CEA and environmental reference frameworks to prescribe fast-track statutory mitigation playbooks.",
+    ccHi: "चरण 4: सिमेंटिक RAG विनियामक खोज। सीईए और पर्यावरण संदर्भों के आधार पर त्वरित वैधानिक शमन कार्य योजना का निर्माण।",
   },
   {
     id: 5,

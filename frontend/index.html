@@ -297,7 +297,7 @@
               <span class="npp-sector-bold">Power Sector</span>
             </h2>
             <p class="npp-hero-subtext" data-i18n="hero_subheadline">
-              Multi-factor AI prediction engine with 96.8% verified accuracy (Cost R²: 0.946, Timeline R²: 0.989). Forecast time & cost slippage 6 to 12 months in advance, preserving ₹50–100 Crore per capital project across solar, thermal, wind, and transmission corridors.
+              Dual-model XGBoost regression engine forecasting project timeline and cost slippage 6 to 12 months in advance across solar, thermal, wind, and transmission corridors (Cost R²: 0.749, Timeline R²: 0.855, Timeline MAE: 2.83 Mo, Cost MAE: 3.03 p.p.).
             </p>
           </div>
 
@@ -317,7 +317,7 @@
           <div class="npp-slide-dots">
             <span class="npp-dot active" title="Slide 1: National Power Intelligence"></span>
             <span class="npp-dot" title="Slide 2: 5 Autonomous AI Agents"></span>
-            <span class="npp-dot" title="Slide 3: 96.8% Accurate Delay Prediction"></span>
+            <span class="npp-dot" title="Slide 3: Dual XGBoost Delay Forecasting"></span>
           </div>
         </div>
       </div>
@@ -332,7 +332,7 @@
         </p>
         <div class="npp-statement-ai-note">
           <span class="pulse-beacon"></span>
-          <span data-i18n="npp_ai_extension_note">National Infrastructure Decision Grid: Machine learning delay forecasting (96.8% accuracy), 6-factor risk scoring, and RAG regulatory mitigation playbooks.</span>
+          <span data-i18n="npp_ai_extension_note">National Infrastructure Decision Grid: Machine learning delay forecasting (Cost R²: 0.749, Timeline R²: 0.855, Avg R²: 0.802), 6-factor risk scoring, and RAG regulatory mitigation playbooks.</span>
         </div>
       </div>
     </section>
@@ -439,9 +439,9 @@
           <div class="card-icon-wrap icon-cyan"><i class="fa-solid fa-brain"></i></div>
           <h3 class="card-heading" data-i18n="pil_1_title">ML-Based Cost & Timeline Engine</h3>
           <p class="card-p" data-i18n="pil_1_desc">
-            XGBoost regressor and temporal critical path forecasting trained on 5,000+ power projects. Computes exact delay months, budget overrun, and statistical confidence.
+            Dual XGBoost regression engine trained on 6,000 calibrated synthetic project archetypes and CEA benchmarks. Estimates timeline slippage, cost overrun, and feature attributions.
           </p>
-          <span class="tag-pill">R² ≈ 0.88 Accuracy</span>
+          <span class="tag-pill">Cost R²: 0.749 | Time R²: 0.855</span>
         </div>
 
         <div class="pillar-box glass-panel">
@@ -459,7 +459,7 @@
           <div class="card-icon-wrap icon-green"><i class="fa-solid fa-book-bookmark"></i></div>
           <h3 class="card-heading" data-i18n="pil_3_title">RAG-Driven Mitigation Playbook</h3>
           <p class="card-p" data-i18n="pil_3_desc">
-            Vector search over 10,000+ historical power reports, CEA bulletins, MoEFCC fast-track circulars, and CERC contracts synthesizing tailored bilingual intervention steps.
+            Vector search over CEA circulars, MoEFCC guidelines, and statutory reference frameworks synthesizing tailored mitigation steps.
           </p>
           <span class="tag-pill">8 Mo Saved / ₹60 Cr Saved</span>
         </div>
@@ -738,9 +738,9 @@
             <span class="feat-badge">PILLAR 03</span>
           </div>
           <h3 class="feat-title">RAG Regulatory Mitigation Intelligence</h3>
-          <p class="feat-p">Retrieval-Augmented Generation across 10,000+ indexed statutory records: CEA operational benchmarks, MoEFCC Parivesh fast-track circulars, CERC tariff orders, and CPGRAMS land resolution precedents.</p>
+          <p class="feat-p">Retrieval-Augmented Generation across indexed statutory records: CEA operational benchmarks, MoEFCC Parivesh circulars, CERC tariff regulations, and land acquisition precedents.</p>
           <div class="feat-metrics-strip">
-            <div class="feat-metric"><span>Vector Embeddings</span><strong>10,000+ Docs</strong></div>
+            <div class="feat-metric"><span>Knowledge Base</span><strong>Curated Corpus</strong></div>
             <div class="feat-metric"><span>Average Time Saved</span><strong>8.4 Months</strong></div>
             <div class="feat-metric"><span>Capex Preserved</span><strong>₹60+ Cr / Unit</strong></div>
           </div>
@@ -893,17 +893,17 @@
                       <div class="mock-kpi-pill">
                         <span class="mock-kpi-name">COST OVERRUN</span>
                         <span class="mock-kpi-stat text-danger">+33.7% (₹3,342.5 Cr)</span>
-                        <span class="mock-kpi-sub">Cost Model R² = 0.9461 (94.6%)</span>
+                        <span class="mock-kpi-sub">Cost Model R² = 0.7491 (74.9%)</span>
                       </div>
                       <div class="mock-kpi-pill">
                         <span class="mock-kpi-name">TIMELINE SLIPPAGE</span>
                         <span class="mock-kpi-stat text-warning">+18 Months Delay</span>
-                        <span class="mock-kpi-sub">Timeline Model R² = 0.9889 (98.9%)</span>
+                        <span class="mock-kpi-sub">Timeline Model R² = 0.8552 (85.5%)</span>
                       </div>
                       <div class="mock-kpi-pill">
-                        <span class="mock-kpi-name">STATISTICAL CONFIDENCE</span>
-                        <span class="mock-kpi-stat text-success">96.8% Overall Precision</span>
-                        <span class="mock-kpi-sub">Calibrated on 6,000+ Projects</span>
+                        <span class="mock-kpi-name">AVERAGE MODEL R²</span>
+                        <span class="mock-kpi-stat text-success">0.8022 (Mean R²)</span>
+                        <span class="mock-kpi-sub">MAE: 2.83 Mo | 3.03 p.p.</span>
                       </div>
                     </div>
                   </div>
@@ -942,9 +942,9 @@
                   </div>
                   <div class="mock-content-box">
                     <div class="mock-rag-flow">
-                      <div class="mock-rag-item"><i class="fa-solid fa-file-shield text-cyan"></i> <span>Indexed 10,000+ CEA & MoEFCC Regulatory Precedents</span></div>
+                      <div class="mock-rag-item"><i class="fa-solid fa-file-shield text-cyan"></i> <span>Indexed CEA & MoEFCC Regulatory Precedents</span></div>
                       <div class="mock-rag-item"><i class="fa-solid fa-wand-magic-sparkles text-amber"></i> <span>Retrieved Rajasthan Cadastral DGPS Fast-Track Playbook</span></div>
-                      <div class="mock-rag-item"><i class="fa-solid fa-coins text-success"></i> <span>Prescribed 4 Action Items: Saving 15 Months & ₹151.8 Crore</span></div>
+                      <div class="mock-rag-item"><i class="fa-solid fa-coins text-success"></i> <span>Prescribed 4 Action Items: Timeline Mitigation & Risk Reduction</span></div>
                     </div>
                   </div>
                 </div>
@@ -1038,8 +1038,8 @@
           <div class="step-num-badge">02</div>
           <div class="step-content">
             <h3 class="step-title">ML Timeline & Cost Forecasting</h3>
-            <p class="step-p">The tuned XGBoost regressor benchmarks the project against 6,000+ historical Indian power projects, projecting exact slippage months and capital expenditure variance.</p>
-            <div class="step-tag"><i class="fa-solid fa-arrow-down-long"></i> 96.8% Verified Model Accuracy</div>
+            <p class="step-p">The tuned XGBoost regressor evaluates the project against 6,000+ calibrated synthetic archetypes and 12 real CEA benchmarks, projecting slippage months and capital expenditure variance.</p>
+            <div class="step-tag"><i class="fa-solid fa-arrow-down-long"></i> Cost R²: 0.7491 | Timeline R²: 0.8552</div>
           </div>
         </div>
 
@@ -1056,7 +1056,7 @@
           <div class="step-num-badge">04</div>
           <div class="step-content">
             <h3 class="step-title">Semantic RAG Regulatory Retrieval</h3>
-            <p class="step-p">The system vector-searches 10,000+ indexed statutory documents to locate relevant MoEFCC fast-track circulars, CEA technical standards, and state cabinet precedents.</p>
+            <p class="step-p">The system vector-searches indexed statutory documents to locate relevant MoEFCC guidelines, CEA technical standards, and administrative precedents.</p>
             <div class="step-tag"><i class="fa-solid fa-arrow-down-long"></i> Statutory Precedent Matching</div>
           </div>
         </div>
@@ -1594,11 +1594,11 @@
 
         <div class="faq-item glass-panel">
           <div class="faq-question" onclick="toggleFaq(this)">
-            <span>How is the 96.8% prediction accuracy verified?</span>
+            <span>How are the regression model metrics (R² and MAE) validated?</span>
             <i class="fa-solid fa-chevron-down faq-caret"></i>
           </div>
           <div class="faq-answer">
-            <p>Model accuracy is validated on 6,000+ Indian capital projects spanning all 36 States/UTs. The tuned XGBoost ensemble with structural infrastructure physics (IDC, land litigation, and critical-path interactions) achieves an R² coefficient of 0.946 on Cost Overrun (MAE 0.79%) and 0.989 on Timeline Delay (MAE 0.56 months), delivering 96.8% overall predictive precision.</p>
+            <p>Model performance is validated through dual calibration: a 6,000-archetype stochastic Monte Carlo simulation across all 36 States/UTs plus real historical empirical benchmarks from Central Electricity Authority (CEA) Broad Status Reports (e.g. Subansiri Lower, Barh, Tapovan Vishnugad, Bhadla Solar). The tuned XGBoost regressors evaluate Cost Overrun with an R² of 0.7491 (MAE 3.03 percentage points) and Timeline Delay with an R² of 0.8552 (MAE 2.83 months), resulting in an average R² of 0.8022 across both models.</p>
           </div>
         </div>
 
@@ -1608,7 +1608,7 @@
             <i class="fa-solid fa-chevron-down faq-caret"></i>
           </div>
           <div class="faq-answer">
-            <p>The vector store contains over 10,000 statutory documents: CEA Technical Standards, Central Electricity Regulatory Commission (CERC) tariff regulations, MoEFCC Parivesh environment & forest circulars, CPGRAMS land dispute precedents, and state transmission interconnection protocols.</p>
+            <p>The vector knowledge base indexes curated statutory frameworks: Central Electricity Authority (CEA) guidelines, Central Electricity Regulatory Commission (CERC) tariff regulations, MoEFCC Parivesh environmental circulars, and land acquisition precedents under the RFCTLARR Act.</p>
           </div>
         </div>
 
@@ -1741,7 +1741,7 @@
       <h3>1. Authorized Use</h3>
       <p>PowerPredict AI is licensed exclusively for power sector project planning, delay forecasting, capital risk mitigation, and regulatory reporting by authorized utilities, EPC contractors, and government entities.</p>
       <h3>2. Model Predictions & Prudence Disclaimer</h3>
-      <p>While the machine learning ensemble achieves 96.8% accuracy, predictions constitute executive decision support recommendations. Final contractual decisions and statutory submissions remain the responsibility of authorized project officers.</p>
+      <p>While the machine learning regressors achieve high explanatory power (Cost R²: 0.7491, Timeline R²: 0.8552), predictions constitute executive decision support recommendations. Final contractual decisions and statutory submissions remain the responsibility of authorized project officers.</p>
       <h3>3. Service Level Agreement (SLA)</h3>
       <p>Enterprise and National Strategic Grid tiers carry a 99.9% uptime SLA with 15-minute response times for critical telemetry feeds.</p>
       <h3>4. Governing Law</h3>
@@ -2476,18 +2476,18 @@
 
             <div class="kpi-card glass-panel">
               <div class="kpi-header">
-                <span class="kpi-title" data-i18n="kpi_conf_title">MODEL CONFIDENCE</span>
+                <span class="kpi-title" data-i18n="kpi_conf_title">MODEL RELIABILITY (AVG R²)</span>
                 <div class="kpi-icon-wrap icon-green"><i class="fa-solid fa-bullseye"></i></div>
               </div>
               <div class="kpi-value-row">
-                <span class="kpi-val text-success" id="kpi-confidence">96.8%</span>
-                <span class="kpi-tag badge-success">High Confidence</span>
+                <span class="kpi-val text-success" id="kpi-confidence">0.802</span>
+                <span class="kpi-tag badge-success">Average R²</span>
               </div>
               <div class="kpi-subtext" data-i18n="kpi_conf_sub">
-                Calibrated on 6,000+ Power Projects (36 States/UTs)
+                Cost R²: 0.749 (MAE 3.03 p.p.) | Time R²: 0.855 (MAE 2.83 Mo)
               </div>
               <div class="kpi-progress-bar">
-                <div class="kpi-progress-fill fill-success" style="width: 97%;"></div>
+                <div class="kpi-progress-fill fill-success" style="width: 80%;"></div>
               </div>
             </div>
           </div>
@@ -2655,7 +2655,7 @@
                 <span class="eyebrow"><i class="fa-solid fa-book-sparkles"></i> <span data-i18n="rag_eyebrow">RETRIEVAL-AUGMENTED GENERATION</span></span>
                 <h2 class="section-hero-title" data-i18n="rag_title">Actionable Mitigation Plan</h2>
                 <p class="section-hero-desc" data-i18n="rag_desc">
-                  Synthesized from 10,000+ past Indian power project reports, CEA guidelines, and MoEFCC fast-track procedures.
+                  Synthesized from CEA regulatory circulars, CERC guidelines, and statutory reference frameworks.
                 </p>
               </div>
               <div class="rag-quant-results">
@@ -3212,9 +3212,9 @@
             <div class="kpi-subtext">+10 Months Schedule Slippage</div>
           </div>
           <div class="kpi-card glass-panel">
-            <span class="kpi-title">STATISTICAL CONFIDENCE</span>
-            <div class="kpi-val text-success">87.4%</div>
-            <div class="kpi-subtext">Calibrated on 5,000+ Projects</div>
+            <span class="kpi-title">MODEL ERROR MARGIN</span>
+            <div class="kpi-val text-success">±2.8 Mo</div>
+            <div class="kpi-subtext">Timeline Model MAE (R² = 0.855)</div>
           </div>
         </div>
       </div>
@@ -3412,7 +3412,7 @@
                 <th>Project Name</th>
                 <th>Predicted Cost</th>
                 <th>Predicted Timeline</th>
-                <th>Confidence</th>
+                <th>Reliability</th>
                 <th>Risk Band</th>
                 <th>Inference Date</th>
                 <th>Actions</th>
