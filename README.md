@@ -15,6 +15,9 @@
 
 ---
 
+> 🎓 **Academic Project Disclaimer**:  
+> **Independent student project. Not affiliated with MoP, CEA or any government body. Uses synthetic data.**
+
 > 🌐 **Live Web Application**: [https://powerpredict-ai.onrender.com](https://powerpredict-ai.onrender.com)  
 > ⚠️ *Note: Hosted on Render Free Tier. If inactive, the container spins down to conserve resources; initial boot / cold start may take 30–50 seconds.*
 

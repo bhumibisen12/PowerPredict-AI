@@ -6,7 +6,7 @@
   <title>PowerPredict AI - National Power Project Predictive Analytics Platform</title>
   <meta name="description" content="AI platform predicting power sector project delays and cost overruns 6-12 months in advance with multi-factor threat scoring and RAG-driven mitigation.">
   
-  <!-- Modern Typography (Including Calligraphic Script matching National Power Portal) -->
+  <!-- Modern Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -51,10 +51,10 @@
       </div>
     </div>
     <div class="gov-utility-right">
-      <a href="#dashboard" class="npp-pushp-badge" id="top-pushp-badge">
-        <span class="pulse-beacon"></span>
-        <span data-i18n="pushp_tag">Surplus Power on PUShP | National AI Dispatch Grid</span>
-      </a>
+      <div class="student-disclaimer-pill" id="top-disclaimer-pill">
+        <i class="fa-solid fa-graduation-cap text-cyan"></i>
+        <span data-i18n="disclaimer_pill">Independent student project. Not affiliated with MoP, CEA or any government body. Uses synthetic data.</span>
+      </div>
       <button id="theme-toggle-btn" class="gov-theme-btn" title="Toggle Dark/Light Mode">
         <i class="fa-solid fa-moon" id="theme-icon"></i>
         <span id="theme-label">Light Mode</span>
@@ -63,11 +63,11 @@
   </div>
 
   <!-- =========================================================================
-       2. MAIN INSTITUTIONAL HEADER BAR (National Power Portal Branding)
+       2. MAIN APPLICATION HEADER BAR
        ========================================================================= -->
   <header class="npp-main-header" id="npp-header">
     <div class="npp-header-brand-wrap" id="logo-home-link" style="cursor: pointer;">
-      <!-- Official Emblem of India (Ashoka Lion Capital with Satyameva Jayate) -->
+      <!-- Platform Logo: AI Energy Shield -->
       <div class="npp-emblem-wrap">
         <svg class="powerpredict-logo-svg" viewBox="0 0 100 100" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -212,10 +212,10 @@
   </nav>
 
   <!-- =========================================================================
-       VIEW 1: HOMEPAGE (PUBLIC LANDING PAGE - NATIONAL POWER PORTAL)
+       VIEW 1: HOMEPAGE (PUBLIC LANDING PAGE)
        ========================================================================= -->
   <div id="view-home" class="page-view active">
-    <!-- HERO SECTION (AUTHENTIC NPP CAROUSEL BANNER) -->
+    <!-- HERO SECTION (INTERACTIVE CAROUSEL BANNER) -->
     <section class="npp-hero-banner" id="main-content">
       <div class="npp-hero-overlay"></div>
       
@@ -323,16 +323,16 @@
       </div>
     </section>
 
-    <!-- SUB-HERO OFFICIAL STATEMENT CARD (Verbatim NPP statement from screenshot) -->
+    <!-- ACADEMIC RESEARCH DISCLAIMER BANNER -->
     <section class="npp-statement-bar">
       <div class="npp-statement-card">
-        <div class="npp-statement-tricolor"></div>
-        <p class="npp-statement-p" data-i18n="npp_official_statement">
-          PowerPredict AI is a centralized decision support grid for the Indian Power Sector which facilitates predictive intelligence and continuous monitoring across generation and transmission utilities in the country, disseminating analyzed delay forecasts, capex risk graphs, and regulatory mitigation playbooks at all-India, regional, and state levels.
+        <div class="npp-statement-accent"></div>
+        <p class="npp-statement-p">
+          <i class="fa-solid fa-graduation-cap text-cyan"></i> <strong>Academic Prototype Notice:</strong> Independent student project. Not affiliated with MoP, CEA or any government body. Uses synthetic data.
         </p>
         <div class="npp-statement-ai-note">
           <span class="pulse-beacon"></span>
-          <span data-i18n="npp_ai_extension_note">National Infrastructure Decision Grid: Machine learning delay forecasting (Cost R²: 0.749, Timeline R²: 0.855, Avg R²: 0.802), 6-factor risk scoring, and RAG regulatory mitigation playbooks.</span>
+          <span>Dual XGBoost Regression & Regulatory Compliance Simulation Prototype (Cost R²: 0.749, Timeline R²: 0.855, Avg R²: 0.802).</span>
         </div>
       </div>
     </section>
@@ -603,7 +603,7 @@
           <ul class="tier-features">
             <li><i class="fa-solid fa-check text-cyan"></i> Unlimited National Portfolio Projects</li>
             <li><i class="fa-solid fa-check text-cyan"></i> Custom On-Premises or Sovereign Cloud</li>
-            <li><i class="fa-solid fa-check text-cyan"></i> Automated Government e-Office Integration</li>
+            <li><i class="fa-solid fa-check text-cyan"></i> Enterprise Document Management Integration</li>
             <li><i class="fa-solid fa-check text-cyan"></i> 24/7 Dedicated Infrastructure Support</li>
           </ul>
           <button class="btn-ghost w-100 tier-cta" onclick="switchToLogin()">Contact Institutional Team</button>
@@ -611,31 +611,31 @@
       </div>
     </section>
 
-    <!-- NATIONAL POWER PORTAL OFFICIAL FOOTER -->
+    <!-- PLATFORM FOOTER -->
     <footer class="npp-portal-footer">
-      <div class="npp-tricolor-stripe"></div>
+      <div class="npp-accent-stripe"></div>
       <div class="npp-footer-inner">
         <div class="npp-footer-col brand-col">
           <div class="npp-footer-brand">
             <span class="npp-title-national">PowerPredict</span>
             <span class="npp-title-portal">AI</span>
-            </div>
-          <p class="npp-footer-desc" data-i18n="footer_desc">
-            A centralized decision support platform for the Indian Power Sector, facilitating ML project delay predictions, capital overrun forecasting, and RAG regulatory mitigation.
+          </div>
+          <p class="npp-footer-desc">
+            An open academic prototype modeling capital project delay risks and cost overruns using dual XGBoost regressors and regulatory compliance playbooks.
           </p>
-          <div class="npp-footer-ministry-note">
-            <i class="fa-solid fa-landmark text-amber"></i> Ministry of Power • Central Electricity Authority • Government of India
+          <div class="npp-footer-student-note">
+            <i class="fa-solid fa-graduation-cap text-cyan"></i> Independent student project. Not affiliated with MoP, CEA or any government body. Uses synthetic data.
           </div>
         </div>
 
         <div class="npp-footer-col">
-          <h4 class="npp-footer-heading">Portals & Initiatives</h4>
+          <h4 class="npp-footer-heading">Platform Sections</h4>
           <ul class="npp-footer-links">
-            <li><a href="#home">National Power Portal (NPP)</a></li>
-            <li><a href="#dashboard">PUShP Day-Ahead Market</a></li>
-            <li><a href="#dashboard">PRAAPTI Payment Portal</a></li>
-            <li><a href="#dashboard">National Transmission Grid</a></li>
-            <li><a href="#dashboard">Renewable Energy Management</a></li>
+            <li><a href="#home">Project Overview</a></li>
+            <li><a href="#features">Core Features</a></li>
+            <li><a href="#how-it-works">5-Agent Architecture</a></li>
+            <li><a href="#dashboard">Prediction Dashboard</a></li>
+            <li><a href="#case-studies">CEA Benchmarks</a></li>
           </ul>
         </div>
 
@@ -651,26 +651,24 @@
         </div>
 
         <div class="npp-footer-col">
-          <h4 class="npp-footer-heading">Support & Contact</h4>
+          <h4 class="npp-footer-heading">Project Info</h4>
           <div class="npp-contact-info">
-            <p><i class="fa-solid fa-location-dot text-cyan"></i> Shram Shakti Bhawan, Rafi Marg, New Delhi - 110001</p>
-            <p><i class="fa-solid fa-envelope text-cyan"></i> support@powerpredict.ai</p>
-            <p><i class="fa-solid fa-phone text-cyan"></i> 011-2371-0498 / 1800-180-2026</p>
-            <p><i class="fa-solid fa-shield text-cyan"></i> 256-Bit SSL Encrypted Enterprise Portal</p>
+            <p><i class="fa-solid fa-graduation-cap text-cyan"></i> Independent Academic Research</p>
+            <p><i class="fa-solid fa-envelope text-cyan"></i> contact@powerpredict.ai</p>
+            <p><i class="fa-solid fa-database text-cyan"></i> Synthetic Data & Public Research Cases</p>
+            <p><i class="fa-solid fa-code text-cyan"></i> Open Source (MIT License)</p>
           </div>
         </div>
       </div>
 
       <div class="npp-footer-bottom">
         <div class="npp-bottom-left">
-          <span>Website Designed & Maintained by PowerPredict AI in alignment with National Power Portal Standards.</span>
+          <span>Independent student project. Not affiliated with MoP, CEA or any government body. Uses synthetic data.</span>
         </div>
         <div class="npp-bottom-right">
           <a href="#">Terms of Use</a> |
           <a href="#">Privacy Policy</a> |
-          <a href="#">Hyperlinking Policy</a> |
-          <a href="#">Accessibility Statement</a> |
-          <a href="#">Sitemap</a>
+          <a href="https://github.com/bhumibisen12/PowerPredict-AI">GitHub Repository</a>
         </div>
       </div>
     </footer>
@@ -803,10 +801,10 @@
         <div class="integrations-badges-grid">
           <div class="integ-badge-item"><i class="fa-solid fa-database text-cyan"></i><span>SAP S/4HANA (Project Systems)</span></div>
           <div class="integ-badge-item"><i class="fa-solid fa-calendar-days text-amber"></i><span>Oracle Primavera P6 (Schedules)</span></div>
-          <div class="integ-badge-item"><i class="fa-solid fa-building-columns text-success"></i><span>NIC e-Office & MoP Portals</span></div>
-          <div class="integ-badge-item"><i class="fa-solid fa-tower-broadcast text-purple"></i><span>National SCADA Telemetry</span></div>
-          <div class="integ-badge-item"><i class="fa-solid fa-satellite text-blue"></i><span>ISRO Bhuvan GIS Satellite Imagery</span></div>
-          <div class="integ-badge-item"><i class="fa-solid fa-bolt text-danger"></i><span>PUShP & PRAAPTI Market Data</span></div>
+          <div class="integ-badge-item"><i class="fa-solid fa-building-columns text-success"></i><span>Enterprise Document Systems</span></div>
+          <div class="integ-badge-item"><i class="fa-solid fa-tower-broadcast text-purple"></i><span>Grid SCADA Telemetry</span></div>
+          <div class="integ-badge-item"><i class="fa-solid fa-satellite text-blue"></i><span>Bhuvan GIS Spatial Imagery</span></div>
+          <div class="integ-badge-item"><i class="fa-solid fa-bolt text-danger"></i><span>Power Market Telemetry APIs</span></div>
         </div>
       </div>
     </div>
@@ -1168,7 +1166,7 @@
           <ul class="tier-features">
             <li><i class="fa-solid fa-check text-cyan"></i> Unlimited National Portfolio Projects</li>
             <li><i class="fa-solid fa-check text-cyan"></i> Sovereign On-Premises or Sovereign Cloud</li>
-            <li><i class="fa-solid fa-check text-cyan"></i> Automated Government e-Office Integration</li>
+            <li><i class="fa-solid fa-check text-cyan"></i> Enterprise Document Management Integration</li>
             <li><i class="fa-solid fa-check text-cyan"></i> Custom RAG Legal Knowledge Base Ingestion</li>
             <li><i class="fa-solid fa-check text-cyan"></i> 24/7 15-Minute SLA Dedicated Grid Command</li>
           </ul>
@@ -1453,31 +1451,24 @@
           <h3 class="contact-card-title"><i class="fa-solid fa-building text-amber"></i> Headquarters & Channels</h3>
           <div class="contact-details-list">
             <div class="c-detail-item">
-              <i class="fa-solid fa-location-dot text-cyan"></i>
+              <i class="fa-solid fa-graduation-cap text-cyan"></i>
               <div>
-                <strong>National Headquarters</strong>
-                <p>Shram Shakti Bhawan, Rafi Marg, New Delhi - 110001</p>
+                <strong>Academic Prototype</strong>
+                <p>Independent student project. Not affiliated with MoP, CEA or any government body.</p>
               </div>
             </div>
             <div class="c-detail-item">
               <i class="fa-solid fa-envelope text-cyan"></i>
               <div>
-                <strong>Enterprise Sales</strong>
-                <p>sales@powerpredict.ai</p>
+                <strong>Project Inquiries</strong>
+                <p>contact@powerpredict.ai</p>
               </div>
             </div>
             <div class="c-detail-item">
-              <i class="fa-solid fa-headset text-success"></i>
+              <i class="fa-solid fa-code-branch text-success"></i>
               <div>
-                <strong>24/7 Grid Emergency Support</strong>
-                <p>support@powerpredict.ai</p>
-              </div>
-            </div>
-            <div class="c-detail-item">
-              <i class="fa-solid fa-phone text-amber"></i>
-              <div>
-                <strong>Telephone Desk</strong>
-                <p>011-2371-0498 / 1800-180-2026 (Toll Free)</p>
+                <strong>Open Source Repository</strong>
+                <p>github.com/bhumibisen12/PowerPredict-AI</p>
               </div>
             </div>
           </div>
@@ -1714,7 +1705,7 @@
     <div class="sub-page-hero">
       <div class="sub-hero-badge"><i class="fa-solid fa-shield-halved text-cyan"></i> LEGAL COMPLIANCE</div>
       <h1 class="sub-hero-title">Privacy Policy & Sovereign Data Governance</h1>
-      <p class="sub-hero-desc">PowerPredict AI operates under strict sovereign data localization protocols aligned with the Ministry of Power and CERT-In guidelines.</p>
+      <p class="sub-hero-desc">PowerPredict AI operates under standard data protection and encryption guidelines.</p>
     </div>
     <div class="page-content-container legal-document-card glass-panel">
       <h3>1. Data Classification & Scope</h3>
@@ -2887,7 +2878,7 @@
           <div class="login-options-row">
             <label class="remember-label">
               <input type="checkbox" id="signup-terms" required checked>
-              <span>I agree to National Power Portal Sovereign Terms</span>
+              <span>I agree to the Terms of Service & Privacy Policy</span>
             </label>
           </div>
 
@@ -3583,8 +3574,8 @@
             <input type="text" class="form-input" value="Central Transmission & Ultra Mega Solar Grid">
           </div>
           <div class="form-group">
-            <label class="form-label">Jurisdiction</label>
-            <input type="text" class="form-input" value="Ministry of Power / Central Electricity Authority">
+            <label class="form-label">Jurisdiction / Department</label>
+            <input type="text" class="form-input" value="Regional Infrastructure Planning Division">
           </div>
           <button class="btn-primary-action mt-2" onclick="alert('Organization details updated!')">Save Organization</button>
         </div>

@@ -21,7 +21,8 @@ const I18N = {
     top_help: "Help",
     lbl_select_lang: "Select Language",
     skip_to_main: "Skip to main content",
-    pushp_tag: "Surplus Power on PUShP | National AI Dispatch Grid",
+    pushp_tag: "Independent student project. Not affiliated with MoP, CEA or any government body. Uses synthetic data.",
+    disclaimer_pill: "Independent student project. Not affiliated with MoP, CEA or any government body. Uses synthetic data.",
     npp_sub_tag: "AI-Powered Capital Project Delay & Cost Overrun Forecasting",
     menu_home: "HOME",
     menu_features: "FEATURES",
@@ -236,7 +237,8 @@ const I18N = {
     top_help: "सहायता",
     lbl_select_lang: "भाषा चुनें",
     skip_to_main: "मुख्य सामग्री पर जाएं",
-    pushp_tag: "PUShP पर अधिशेष बिजली | राष्ट्रीय AI प्रेषण ग्रिड",
+    pushp_tag: "स्वतंत्र छात्र प्रोजेक्ट। MoP, CEA या किसी सरकारी निकाय से संबद्ध नहीं। सिंथेटिक डेटा का उपयोग करता है।",
+    disclaimer_pill: "स्वतंत्र छात्र प्रोजेक्ट। MoP, CEA या किसी सरकारी निकाय से संबद्ध नहीं। सिंथेटिक डेटा का उपयोग करता है।",
     npp_sub_tag: "AI-संचालित पूंजीगत परियोजना विलंब एवं लागत वृद्धि पूर्वानुमान",
     menu_home: "होम",
     menu_features: "विशेषताएं",
@@ -494,7 +496,7 @@ function setupRouting() {
   safeBind("nav-login-btn", "click", () => showView("view-login"));
   safeBind("nav-dashboard-btn", "click", () => showView("view-dashboard"));
   safeBind("nav-dashboard-link", "click", (e) => { e.preventDefault(); showView("view-dashboard"); });
-  safeBind("top-pushp-badge", "click", (e) => { e.preventDefault(); showView("view-dashboard"); });
+  safeBind("top-disclaimer-pill", "click", () => showView("view-home"));
   safeBind("hero-launch-btn", "click", () => showView("view-dashboard"));
   safeBind("hero-login-btn", "click", () => showView("view-login"));
   safeBind("demo-launch-btn", "click", () => showView("view-dashboard"));
@@ -1052,7 +1054,7 @@ function setupAuth() {
 
       currentUser = {
         name: name || "Officer",
-        org: org || "Ministry of Power Utility",
+        org: org || "Power Infrastructure Utility",
         role: role,
         email: email || "officer@utility.gov.in"
       };
